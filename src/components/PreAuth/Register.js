@@ -1,6 +1,20 @@
 import React from "react";
 
 const SignIn = () => {
+  const requestAuthorization = () => {
+    const AUTHORIZE = "https://accounts.spotify.com/authorize";
+    const CLIENT_ID = "120d6eb199c6499998e0fe645309337b";
+    const REDIRECT_URI = "http://localhost:3000/callback/";
+    let url = AUTHORIZE;
+    url += "?client_id=" + CLIENT_ID;
+    url += "&response_type=code";
+    url += "&redirect_uri=" + encodeURI(REDIRECT_URI);
+    url += "&show_dialog=true";
+    url += "&scope=user-read-private user-read-email user-modify-playback-state user-read-playback-position user-library-read streaming user-read-playback-state user-read-recently-played playlist-read-private";
+    window.location.href = url;
+
+  }
+
   return (
       <div className="row mix-login">
         <div className="col-2 col-lg-3 col-xl-4"/>
@@ -33,11 +47,11 @@ const SignIn = () => {
           </div>
         </div>
         <div className="container mt-1 d-flex justify-content-center">
-          <a href="/login"> <button type="button" className="btn btn-outline-light">Already a Mixer?</button></a>
+          <a href="/login"> <button type="button" onClick={requestAuthorization()} className="btn btn-outline-light">Already a Mixer?</button></a>
         </div>
         <div className="col-2 col-lg-3 col-xl-4"/>
       </div>
-  )
+  );
 }
 
 export default SignIn;
