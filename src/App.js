@@ -2,7 +2,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import SignIn from "./components/PreAuth/SignIn"
 import Register from "./components/PreAuth/Register"
 import SpotifyAuth from "./components/HomePage/Spotify/authentication"
-import success from "./components/HomePage/Spotify/success";
+import Success from "./components/HomePage/Spotify/success";
 
 function App() {
   return (
@@ -24,7 +24,7 @@ function App() {
                      element={<SpotifyAuth/>}/>
               <Route path="callback"
                      exact={true}
-                     element={<success/>}/>
+                     element={<Success/>}/>
             </Route>
           </Routes>
         </div>

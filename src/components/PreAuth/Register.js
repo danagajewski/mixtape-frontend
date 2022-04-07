@@ -12,7 +12,6 @@ const SignIn = () => {
     url += "&show_dialog=true";
     url += "&scope=user-read-private user-read-email user-modify-playback-state user-read-playback-position user-library-read streaming user-read-playback-state user-read-recently-played playlist-read-private";
     window.location.href = url;
-
   }
 
   return (
@@ -38,7 +37,7 @@ const SignIn = () => {
                    id="passwordC" placeholder="poopybutthole"/>
           </div>
           <div className="container mt-3 d-flex justify-content-center">
-            <a href="/home"> <button type="button" className="btn btn-secondary">Let's Rock!</button></a>
+            <button type="button" onClick={() => requestAuthorization()} className="btn btn-secondary">Let's Rock!</button>
           </div>
           <div className="row mt-1">
             <div className="col-5"><hr/></div>
@@ -47,7 +46,7 @@ const SignIn = () => {
           </div>
         </div>
         <div className="container mt-1 d-flex justify-content-center">
-          <a href="/login"> <button type="button" onClick={requestAuthorization()} className="btn btn-outline-light">Already a Mixer?</button></a>
+           <button type="button" className="btn btn-outline-light">Already a Mixer?</button>
         </div>
         <div className="col-2 col-lg-3 col-xl-4"/>
       </div>
