@@ -1,6 +1,3 @@
-.mix-center {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.mix-login {
+  margin-top: 10%;
 }

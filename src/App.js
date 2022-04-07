@@ -8,10 +8,13 @@ function App() {
         <div className="container">
           <Routes>
             <Route path="/">
-              <Route path=""
+              <Route path="login"
                      exact={true}
                      element={<SignIn/>}/>
-              <Route path="register"
+              <Route path=""
+                     exact={true}
+                     element={<Register/>}/>
+              <Route path="home"
                      exact={true}
                      element={<Register/>}/>
             </Route>
