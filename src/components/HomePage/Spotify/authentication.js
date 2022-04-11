@@ -1,5 +1,5 @@
 const CLIENT_ID = "120d6eb199c6499998e0fe645309337b";
-const REDIRECT_URI = "http://localhost:3000/callback/";
+const REDIRECT_URI = "http://localhost:3000/";
 const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
 const RESPONSE_TYPE = "token";
 

@@ -22,9 +22,9 @@ function App() {
               <Route path="spotify"
                      exact={true}
                      element={<SpotifyAuth/>}/>
-              <Route path="callback"
+              <Route path="auth/callback"
                      exact={true}
-                     element={<Success/>}/>
+                     element={<Register/>}/>
             </Route>
           </Routes>
         </div>

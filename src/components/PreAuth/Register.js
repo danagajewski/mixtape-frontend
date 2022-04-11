@@ -1,18 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
+import Login from './Login'
+import WebPlayback from "./Webplayback";
 
 const SignIn = () => {
-  const requestAuthorization = () => {
-    const AUTHORIZE = "https://accounts.spotify.com/authorize";
-    const CLIENT_ID = "120d6eb199c6499998e0fe645309337b";
-    const REDIRECT_URI = "http://localhost:3000/callback/";
-    let url = AUTHORIZE;
-    url += "?client_id=" + CLIENT_ID;
-    url += "&response_type=code";
-    url += "&redirect_uri=" + encodeURI(REDIRECT_URI);
-    url += "&show_dialog=true";
-    url += "&scope=user-read-private user-read-email user-modify-playback-state user-read-playback-position user-library-read streaming user-read-playback-state user-read-recently-played playlist-read-private";
-    window.location.href = url;
-  }
+  // const requestAuthorization = () => {
+  //   const AUTHORIZE = "https://accounts.spotify.com/authorize";
+  //   const CLIENT_ID = "120d6eb199c6499998e0fe645309337b";
+  //   const REDIRECT_URI = "http://localhost:3000/callback/";
+  //   let url = AUTHORIZE;
+  //   url += "?client_id=" + CLIENT_ID;
+  //   url += "&response_type=code";
+  //   url += "&redirect_uri=" + encodeURI(REDIRECT_URI);
+  //   url += "&show_dialog=true";
+  //   url += "&scope=user-read-private user-read-email user-modify-playback-state user-read-playback-position user-library-read streaming user-read-playback-state user-read-recently-played playlist-read-private";
+  //   window.location.href = url;
+  // }
+
+  const [token, setToken] = useState('');
+
+  useEffect(() => {
+
+    async function getToken() {
+      const response = await fetch('/auth/token');
+      const json = await response.json();
+      setToken(json.access_token);
+    }
+
+    getToken();
+
+  }, []);
 
   return (
       <div className="row mix-login">
@@ -37,7 +53,11 @@ const SignIn = () => {
                    id="passwordC" placeholder="poopybutthole"/>
           </div>
           <div className="container mt-3 d-flex justify-content-center">
-            <button type="button" onClick={() => requestAuthorization()} className="btn btn-secondary">Let's Rock!</button>
+            {/*<button type="button" onClick={() => requestAuthorization()} className="btn btn-secondary">Let's Rock!</button>*/}
+            { (token === '') ? <Login/> : <WebPlayback token={token} /> }
+            <p>{token}</p>
+            {/*<Login/>*/}
+            {/*<WebPlayback/>*/}
           </div>
           <div className="row mt-1">
             <div className="col-5"><hr/></div>
