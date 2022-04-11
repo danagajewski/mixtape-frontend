@@ -43,6 +43,11 @@ const SignIn = () => {
                    id="username" placeholder="iamcool2022"/>
           </div>
           <div className="form-group mt-1">
+            <label className="mx-2" htmlFor="email">Email</label>
+            <input type="email" className="form-control"
+                   id="email" placeholder="iam@cool2022.com"/>
+          </div>
+          <div className="form-group mt-1">
             <label className="mx-2" htmlFor="password">Password</label>
             <input type="password" className="form-control"
                    id="password" placeholder="poopybutthole"/>
@@ -66,7 +71,7 @@ const SignIn = () => {
           </div>
         </div>
         <div className="container mt-1 d-flex justify-content-center">
-           <button type="button" className="btn btn-outline-light">Already a Mixer?</button>
+           <a href="/login"><button type="button" className="btn btn-outline-light">Already a Mixer?</button></a>
         </div>
         <div className="col-2 col-lg-3 col-xl-4"/>
       </div>

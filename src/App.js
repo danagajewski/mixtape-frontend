@@ -3,6 +3,11 @@ import SignIn from "./components/PreAuth/SignIn"
 import Register from "./components/PreAuth/Register"
 import SpotifyAuth from "./components/HomePage/Spotify/authentication"
 import Success from "./components/HomePage/Spotify/success";
+import HomeScreen from "./components/PostAuth/Homepage/HomeScreen";
+import ExploreComponent from "./components/PostAuth/Explore/ExploreComponent";
+import Index from "./components/PostAuth";
+import NotificationsScreen
+  from "./components/PostAuth/Notifications/NotificationsScreen";
 
 function App() {
   return (
@@ -25,11 +30,21 @@ function App() {
               <Route path="auth/callback"
                      exact={true}
                      element={<Register/>}/>
-            </Route>
-          </Routes>
-        </div>
-      </BrowserRouter>
-  );
+              <Route path="mix/"
+                     element={<Index/>}>
+                <Route index
+                       element={<HomeScreen/>}/>
+                <Route path="explore"
+                       element={<ExploreComponent/>}/>
+                <Route path="notifications"
+                       element={<NotificationsScreen/>}/>
+              </Route>
+          </Route>
+        </Routes>
+      </div>
+</BrowserRouter>
+)
+  ;
 }
 
 export default App;

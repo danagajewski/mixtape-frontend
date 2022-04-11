@@ -19,7 +19,7 @@ const SignIn = () => {
                    id="password" placeholder="poopybutthole"/>
           </div>
           <div className="container mt-3 d-flex justify-content-center">
-            <a href="/home"> <button type="button" className="btn btn-secondary">Let's Rock!</button></a>
+            <a href="/mix"> <button type="button" className="btn btn-secondary">Let's Rock!</button></a>
           </div>
         </div>
         <div className="col-2 col-lg-3 col-xl-4"/>

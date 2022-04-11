@@ -1,0 +1,151 @@
+.form-control.rounded-override {
+    border-radius: 50px;
+    border-left: 0;
+}
+
+label.wd-full-width {
+    width: 80%;
+}
+
+.input-group-text.search-start-override {
+    background-color: white;
+    border-radius: 50px;
+    border-right: 0;
+
+}
+
+
+.wd-explore-profile {
+    margin-left: 6px;
+    color: rgb(29,161,242);
+}
+
+.row.margin-bottom-override {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.wd-tuit-block {
+    border-radius: 10px;
+}
+
+img.wd-whole-width{
+    width: 100%;
+}
+
+.bottom-left.overlaid-text-white{
+    color: white;
+    font-size: 56px;
+    position: absolute;
+    bottom: 80px;
+    left: 16px;
+}
+
+.wd-content-ends {
+    color: rgb(110, 118, 125);
+    margin-bottom: 0;
+}
+.wd-content-main  {
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+.wd-rounded-edges {
+    padding: 0;
+    border-radius: 20px;
+    width: 100%;
+    margin-left: 12px;
+}
+
+.wd-content {
+    margin-bottom: 0;
+}
+p.wd-content-header-author {
+    font-size: 13px;
+}
+p.wd-content-main {
+    font-size: 15px;
+}
+
+img.wd-square-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    margin-top: 6px;
+}
+
+.wd-float-right {
+    float: right;
+    height: 100%;
+    margin-right: 12px;
+}
+
+button.wd-rounded-button {
+    border-radius: 30px;
+    font-size: 14px;
+}
+
+img.wd-round-image {
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+}
+
+.wd-margin-right {
+    padding: 0;
+    margin-right: 2px;
+}
+
+
+i.wd-center-cog {
+    position: relative;
+    top: 4px;
+    padding-right: 12px;
+}
+
+i.wd-overlaid-icon {
+    height: 14px;
+    width: 16px;
+    margin-left: 16px;
+}
+
+span.wd-stack-sizing {
+    height:44px;
+    width:36px;
+}
+
+.wd-top {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-color: rgb(80, 80, 80);
+}
+
+.wd-middle {
+    border-bottom-color: rgb(80, 80, 80);
+}
+
+.wd-top {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.wd-handle{
+    font-weight: normal;
+    color: rgb(110, 118, 125);
+}
+
+i.wd-search-mag {
+    color: rgb(150, 150, 150);
+}
+
+.wd-whats-happening {
+    width: 100%;
+    background: transparent;
+    border-width: 0;
+    border-bottom: solid lightgrey;
+    color: lightgrey;
+}
+
+.wd-tuit-button {
+    width: 160px;
+}

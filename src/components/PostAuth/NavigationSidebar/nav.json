@@ -1,0 +1,9 @@
+[
+  {"icon": "fa-brands fa-twitter", "content": "", "active":false, "link": "/mix"},
+  {"icon": "fa-solid fa-hashtag", "content": "Explore", "active":true, "link": "/mix/explore"},
+  {"icon": "fa-solid fa-bell", "content": "Notifications", "active":false, "link": "/mix"},
+  {"icon": "fa-solid fa-envelope", "content": "Messages", "active":false, "link": "/mix"},
+  {"icon": "fa-solid fa-bookmark", "content": "Bookmarks", "active":false, "link": "/mix"},
+  {"icon": "fa-solid fa-list", "content": "Lists", "active":false, "link": "/mix"},
+  {"icon": "fa-solid fa-user", "content": "Profile", "active":false, "link": "/mix"},
+  {"icon": "fa-solid fa-circle", "content": "More", "active":false, "link": "/mix"}
