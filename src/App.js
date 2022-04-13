@@ -2,7 +2,6 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import SignIn from "./components/PreAuth/SignIn"
 import Register from "./components/PreAuth/Register"
 import SpotifyAuth from "./components/HomePage/Spotify/authentication"
-import Success from "./components/HomePage/Spotify/success";
 import HomeScreen from "./components/PostAuth/Homepage/HomeScreen";
 import ExploreComponent from "./components/PostAuth/Explore/ExploreComponent";
 import Index from "./components/PostAuth";

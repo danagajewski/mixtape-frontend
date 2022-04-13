@@ -4,7 +4,7 @@ const API_BASE = process.env.REACT_APP_API_BASE;
 const NOTES_API = `${API_BASE}/notes`;
 
 export const createNote = async (note) => {
-  const response = await axios.post(NOTES_API, note)``
+  const response = await axios.post(NOTES_API, note);
   return response.data;
 }
 
