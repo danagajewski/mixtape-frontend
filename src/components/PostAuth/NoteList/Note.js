@@ -32,6 +32,7 @@ const Note = ({
 
   return (<div className="card wd-middle">
 
+
         <div className="row card-body p-1 m-1 ">
           <div className="row">
             <div className="col-2 my-2">
@@ -60,7 +61,7 @@ const Note = ({
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                           allowFullScreen/> :
                   <></>}
-              <NoteStats tuit={note}/>
+              <NoteStats note={note}/>
 
             </div>
           </div>
