@@ -39,7 +39,7 @@ const SignIn = () => {
         <div className="col-2 col-lg-3 col-xl-4"/>
         <div className="col-8 col-lg-6 col-xl-4">
           <div className="container text-center">
-            <img src={require("../../Style/logo.png")}/>
+            <aimg src={require("../../Style/logo.png")}/>
           </div>
           <div className="form-group mt-3">
             <label className="mx-2" htmlFor="username">Username</label>
