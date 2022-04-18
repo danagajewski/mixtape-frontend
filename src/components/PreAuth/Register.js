@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import Login from './Login'
-import WebPlayback from "./Webplayback";
+
+// import WebPlayback from "./Webplayback";
+import LoginNew from "./NewLogin";
+import Dashboard from "./Dashboard"
+
+
 
 const SignIn = () => {
   // const requestAuthorization = () => {
@@ -15,20 +19,20 @@ const SignIn = () => {
   //   url += "&scope=user-read-private user-read-email user-modify-playback-state user-read-playback-position user-library-read streaming user-read-playback-state user-read-recently-played playlist-read-private";
   //   window.location.href = url;
   // }
+  const code = new URLSearchParams(window.location.search).get('code')
+  // const [token, setToken] = useState('');
 
-  const [token, setToken] = useState('');
-
-  useEffect(() => {
-
-    async function getToken() {
-      const response = await fetch('/auth/token');
-      const json = await response.json();
-      setToken(json.access_token);
-    }
-
-    getToken();
-
-  }, []);
+  // useEffect(() => {
+  //
+  //   async function getToken() {
+  //     const response = await fetch('/auth/token');
+  //     const json = await response.json();
+  //     setToken(json.access_token);
+  //   }
+  //
+  //   getToken();
+  //
+  // }, []);
 
   return (
       <div className="row mix-login">
@@ -59,8 +63,11 @@ const SignIn = () => {
           </div>
           <div className="container mt-3 d-flex justify-content-center">
             {/*<button type="button" onClick={() => requestAuthorization()} className="btn btn-secondary">Let's Rock!</button>*/}
-            { (token === '') ? <Login/> : <WebPlayback token={token} /> }
-            <p>{token}</p>
+            <p>{code}</p>
+            <LoginNew/>
+            {/*<Dashboard/>*/}
+            { (code === '') ? <LoginNew/> : <Dashboard/> }
+            <p>{code}</p>
             {/*<Login/>*/}
             {/*<WebPlayback/>*/}
           </div>
