@@ -149,3 +149,7 @@ i.wd-search-mag {
 .wd-tuit-button {
     width: 160px;
 }
+
+.mt-no-underline {
+    text-decoration: none;
+}

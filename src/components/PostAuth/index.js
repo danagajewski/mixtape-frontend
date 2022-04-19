@@ -3,12 +3,12 @@ import React from "react";
 import NavigationSidebar from "./NavigationSidebar/NavigationSidebar";
 import './mixtape-home.css'
 import WhoToFollowList from "./WhoToFollow/WhoToFollowList";
-import whoReducer from "./reducers/who-reducer";
+import whoReducer from "./reducers/user-reducer";
 import notesReducer from "./reducers/notes-reducer";
 import {combineReducers, createStore} from "redux";
 import {Provider} from "react-redux";
 
-const reducers = combineReducers({notes: notesReducer,who: whoReducer});
+const reducers = combineReducers({notes: notesReducer,users: whoReducer});
 
 const store = createStore(reducers);
 

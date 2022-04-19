@@ -9,8 +9,8 @@ const NavigateItemLg = ({
   }
 }) => {
   return (
-      <Link to={nav.link}>
-        <button className={`list-group-item ${nav.active
+      <Link to={nav.link} className="mt-no-underline">
+        <button className={`mt-no-underline list-group-item ${nav.active
             ? ' list-group-item-action active' : ' list-group-item-action'}`}>
           <i className={`${nav.icon}`}/> {nav.content}
         </button>
