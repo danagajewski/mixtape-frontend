@@ -1,7 +1,6 @@
 import React, {useRef} from "react";
 import {useDispatch} from "react-redux";
-import {updateUser} from "../../actions/user-actions";
-import {useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router";
 import {useProfile} from "../../Contexts/profile-context";
 import axios from "axios";
 
@@ -12,7 +11,7 @@ const api = axios.create({
 const Profile = () => {
   
   const navigate = useNavigate()
-  const {profile, signout} = useProfile()
+  const {profile, signout, update} = useProfile()
 
   const logout = async () => {
     try {
@@ -22,10 +21,6 @@ const Profile = () => {
     }
     navigate('/login')
   }
-
-  const dispatch = useDispatch();
-
-  console.log(profile);
 
   const usernameRef = useRef();
   const emailRef = useRef();
@@ -47,12 +42,11 @@ const Profile = () => {
     updatedUser.username = usernameRef.current.value;
     updatedUser.email = emailRef.current.value;
     updatedUser.profile_pic = profilePicRef.current.value;
-    updateUser(dispatch, updatedUser);
+    update(updatedUser);
   }
-  console.log(updatedUser.username);
 
   return (
-      <div className="row mix-login">
+      <div className="row mt-4">
         <div className="col-2 col-lg-3 col-xl-4"/>
         <div className="col-8 col-lg-6 col-xl-4">
           <div className="container text-center wd-round-image">
@@ -104,9 +98,14 @@ const Profile = () => {
             <button type="button" onClick={() => handleSubmit()} className="btn btn-outline-light">Save Changes</button>
           </a>
         </div>
-        <div className="container mt-3 d-flex justify-content-center">
+        <div className="container mt-1 d-flex justify-content-center">
           <a href="/mix">
-            <button type="button" onClick={logout} className="btn btn-outline-light">Save Changes</button>
+            <button type="button" className="btn btn-outline-light">Discard</button>
+          </a>
+        </div>
+        <div className="container mt-1 d-flex justify-content-center">
+          <a href="/mix">
+            <button type="button" onClick={logout} className="btn btn-outline-light">Log Out</button>
           </a>
         </div>
         <div className="col-2 col-lg-3 col-xl-4"/>

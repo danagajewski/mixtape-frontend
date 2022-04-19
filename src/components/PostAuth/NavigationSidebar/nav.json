@@ -5,5 +5,5 @@
   {"icon": "fa-solid fa-envelope", "content": "Messages", "active":false, "link": "/mix"},
   {"icon": "fa-solid fa-bookmark", "content": "Bookmarks", "active":false, "link": "/mix"},
   {"icon": "fa-solid fa-list", "content": "Lists", "active":false, "link": "/mix"},
-  {"icon": "fa-solid fa-user", "content": "Profile", "active":false, "link": "/mix/profile"},
+  {"icon": "fa-solid fa-user", "content": "Profile", "active":false, "link": "/profile"},
   {"icon": "fa-solid fa-circle", "content": "More", "active":false, "link": "/mix"}]

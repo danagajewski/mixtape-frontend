@@ -47,7 +47,15 @@ export const ProfileProvider = ({children}) => {
     }
   }
 
-  const value = {signout, signin, profile, signup, checkLoggedIn}
+  const update = async (user) => {
+    try {
+      await api.put("http://localhost:4000/api/users/" + user._id, user)
+    } catch (e) {
+      throw e
+    }
+  }
+
+  const value = {signout, signin, profile, signup, checkLoggedIn, update}
   return(
       <ProfileContext.Provider value={value}>
         {children}

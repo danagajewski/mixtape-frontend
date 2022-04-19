@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Navigate} from "react-router-dom";
+import {Navigate} from "react-router";
 import {useProfile} from "../Contexts/profile-context";
 
 const SecureRoute = ({children}) => {
@@ -8,7 +8,7 @@ const SecureRoute = ({children}) => {
   const [waiting, setWaiting] = useState(true)
   const check = async () => {
     try {
-      const user = await checkLoggedIn()
+      const user = await checkLoggedIn.checkLoggedIn()
       setCurrentUser(user)
       setWaiting(false)
     } catch (e) {

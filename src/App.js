@@ -43,10 +43,6 @@ function App() {
                   <Route path="notifications"
                          exact={true}
                          element={<NotificationsScreen/>}/>
-                  <Route path="profile"
-                         exact={true}
-                         element={<Profile
-                             userId="625dbcbaf5c4aaea8788d377"/>}/>
                 </Route>
                 <Route path="profile"
                        exact={true}

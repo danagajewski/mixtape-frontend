@@ -1,11 +1,11 @@
 import React, {useRef} from "react";
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router";
 import {useProfile} from "../Contexts/profile-context";
 
 const SignIn = () => {
   const usernameRef = useRef();
   const passwordRef = useRef();
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const signin = useProfile();
   const handleSigninBtn = async () => {
     try {
@@ -13,7 +13,7 @@ const SignIn = () => {
           usernameRef.current.value,
           passwordRef.current.value
       )
-      navigate('/profile')
+      navigate('/mix', { replace: true })
     } catch (e) {
       alert('Invalid Username or Password')
     }
