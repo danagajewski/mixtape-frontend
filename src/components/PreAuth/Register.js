@@ -87,8 +87,6 @@ const Register = () => {
             {/*<Dashboard/>*/}
             { (code === '') ? <LoginNew/> : <Dashboard/> }
             <p>{code}</p>
-            {/*<Login/>*/}
-            {/*<WebPlayback/>*/}
           </div>
           <div className="row mt-1">
             <div className="col-5"><hr/></div>
