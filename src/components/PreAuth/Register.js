@@ -1,6 +1,4 @@
-import React, {useRef} from 'react';
-
-// import WebPlayback from "./Webplayback";
+import React, {useRef, useState} from 'react';
 import LoginNew from "./NewLogin";
 import Dashboard from "./Dashboard"
 import {useNavigate} from "react-router-dom";
@@ -39,7 +37,7 @@ const Register = () => {
   const emailRef = useRef()
   const passwordRef = useRef()
   const passwordCRef = useRef()
-  const navigate = useNavigate()
+  //const navigate = useNavigate()
   const {signup} = useProfile()
   const handleSignupBtn = async () => {
     try {
@@ -47,11 +45,13 @@ const Register = () => {
           emailRef.current.value,
           passwordRef.current.value
       )
-      navigate('/profile')
+      //navigate('/profile')
     } catch (e) {
       alert('oops')
     }
   }
+  const [password, setPassword] = useState('');
+  const [passwordC, setPasswordC] = useState('');
 
   return (
       <div className="row mix-login">
@@ -73,13 +73,26 @@ const Register = () => {
           <div className="form-group mt-1">
             <label className="mx-2" htmlFor="password">Password</label>
             <input type="password" className="form-control"
-                   id="password" ref={passwordRef} placeholder="poopybutthole"/>
+                   id="password" ref={passwordRef} onChange={event => setPassword(event.target.value)} placeholder="poopybutthole"/>
           </div>
-          <div className="form-group mt-1">
-            <label className="mx-2" htmlFor="password">Confirm Password</label>
-            <input type="passwordC" className="form-control"
-                   id="passwordC" ref={passwordCRef} placeholder="poopybutthole"/>
-          </div>
+          {password === passwordC ?
+              <div className="form-group mt-1">
+                <label className="mx-2" htmlFor="passwordC">Confirm New
+                  Password</label>
+                <input type="password" className="form-control"
+                       id="passwordC" ref={passwordCRef}
+                       onChange={event => setPasswordC(event.target.value)}/>
+              </div> :
+              <div className="form-group has-danger mt-1">
+                <label className="mx-2" htmlFor="passwordC">Confirm New
+                  Password</label>
+                <input type="password" className="form-control is-invalid"
+                       id="passwordC" ref={passwordCRef}
+                       onChange={event => setPasswordC(event.target.value)}/>
+                <div className="invalid-feedback">Must match first password.
+                </div>
+              </div>
+          }
           <div className="container mt-3 d-flex justify-content-center">
             {/*<button type="button" onClick={() => requestAuthorization()} className="btn btn-secondary">Let's Rock!</button>*/}
             <p>{code}</p>
@@ -95,7 +108,7 @@ const Register = () => {
           </div>
         </div>
         <div className="container mt-1 d-flex justify-content-center">
-           <a href="/login"> <button type="button" className="btn btn-outline-light" onClick={navigate('/login')}>Already a Mixer?</button></a>
+           <a href="/login"> <button type="button" className="btn btn-outline-light">Already a Mixer?</button></a>
         </div>
         <div className="col-2 col-lg-3 col-xl-4"/>
       </div>

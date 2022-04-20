@@ -91,6 +91,12 @@ img.wd-round-image {
     height: 50px;
 }
 
+img.wd-round-image-prof {
+    border-radius: 150px;
+    width: 150px;
+    height: 150px;
+}
+
 .wd-margin-right {
     padding: 0;
     margin-right: 2px;
@@ -153,3 +159,4 @@ i.wd-search-mag {
 .mt-no-underline {
     text-decoration: none;
 }
+
