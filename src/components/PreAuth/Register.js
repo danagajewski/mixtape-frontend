@@ -7,32 +7,8 @@ import {useProfile} from "../Contexts/profile-context";
 
 
 const Register = () => {
-  // const requestAuthorization = () => {
-  //   const AUTHORIZE = "https://accounts.spotify.com/authorize";
-  //   const CLIENT_ID = "120d6eb199c6499998e0fe645309337b";
-  //   const REDIRECT_URI = "http://localhost:3000/callback/";
-  //   let url = AUTHORIZE;
-  //   url += "?client_id=" + CLIENT_ID;
-  //   url += "&response_type=code";
-  //   url += "&redirect_uri=" + encodeURI(REDIRECT_URI);
-  //   url += "&show_dialog=true";
-  //   url += "&scope=user-read-private user-read-email user-modify-playback-state user-read-playback-position user-library-read streaming user-read-playback-state user-read-recently-played playlist-read-private";
-  //   window.location.href = url;
-  // }
-  const code = new URLSearchParams(window.location.search).get('code')
-  // const [token, setToken] = useState('');
 
-  // useEffect(() => {
-  //
-  //   async function getToken() {
-  //     const response = await fetch('/auth/token');
-  //     const json = await response.json();
-  //     setToken(json.access_token);
-  //   }
-  //
-  //   getToken();
-  //
-  // }, []);
+  const code = new URLSearchParams(window.location.search).get('code')
   const usernameRef = useRef()
   const emailRef = useRef()
   const passwordRef = useRef()
@@ -42,6 +18,7 @@ const Register = () => {
   const handleSignupBtn = async () => {
     try {
       await signup(
+          usernameRef.current.value,
           emailRef.current.value,
           passwordRef.current.value
       )
@@ -50,6 +27,7 @@ const Register = () => {
       alert('oops')
     }
   }
+
   const [password, setPassword] = useState('');
   const [passwordC, setPasswordC] = useState('');
 
@@ -94,10 +72,11 @@ const Register = () => {
               </div>
           }
           <div className="container mt-3 d-flex justify-content-center">
-            {/*<button type="button" onClick={() => requestAuthorization()} className="btn btn-secondary">Let's Rock!</button>*/}
             <p>{code}</p>
-            <LoginNew/>
-            {/*<Dashboard/>*/}
+            {/*<LoginNew/>*/}
+            <div className="container mt-1 d-flex justify-content-center">
+              <a href="/login-spotify"> <button type="button" onClick={() => handleSignupBtn()} className="btn btn-outline-light">Let's Rock</button></a>
+            </div>
             { (code === '') ? <LoginNew/> : <Dashboard/> }
             <p>{code}</p>
           </div>

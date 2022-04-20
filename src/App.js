@@ -1,7 +1,6 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import SignIn from "./components/PreAuth/SignIn"
 import Register from "./components/PreAuth/Register"
-import SpotifyAuth from "./components/HomePage/Spotify/authentication"
 import HomeScreen from "./components/PostAuth/Homepage/HomeScreen";
 import ExploreComponent from "./components/PostAuth/Explore/ExploreComponent";
 import Index from "./components/PostAuth";
@@ -10,6 +9,7 @@ import NotificationsScreen
 import Profile from "./components/PostAuth/Profile/Profile";
 import SecureRoute from "./components/Secure/secure-route";
 import {ProfileProvider} from "./components/Contexts/profile-context";
+import LoginNew from "./components/PreAuth/NewLogin";
 
 function App() {
   return (
@@ -27,9 +27,9 @@ function App() {
                 <Route path="home"
                        exact={true}
                        element={<Register/>}/>
-                <Route path="spotify"
+                <Route path="login-spotify"
                        exact={true}
-                       element={<SpotifyAuth/>}/>
+                       element={<LoginNew/>}/>
                 <Route path="auth/callback"
                        exact={true}
                        element={<Register/>}/>
