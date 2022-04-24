@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const API_BASE = process.env.REACT_APP_API_BASE;
+// const API_BASE = process.env.REACT_APP_API_BASE;
+const API_BASE = "http://localhost:4000/api"
+console.log(API_BASE)
 const USER_API = `${API_BASE}/users`;
 
 export const createUser = async (user) => {
