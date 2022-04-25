@@ -11,6 +11,7 @@ import SecureRoute from "./components/Secure/secure-route";
 import {ProfileProvider} from "./components/Contexts/profile-context";
 import LoginNew from "./components/PreAuth/NewLogin";
 import Searcher from "./components/PostAuth/Search/Searcher";
+import SearchDetails from "./components/PostAuth/Search/SearchDetails";
 
 function App() {
   return (
@@ -53,6 +54,8 @@ function App() {
                        element={<Searcher/>}/>
                 <Route path="search/:searchString"
                        element={<Searcher/>}/>
+                <Route path="details/:searchDetailString"
+                       element={<SearchDetails/>}/>
               </Route>
             </Routes>
           </div>

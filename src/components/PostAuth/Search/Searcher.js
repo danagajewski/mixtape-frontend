@@ -14,9 +14,11 @@ const Searcher = () => {
   // const location = useLocation()
 
   const getAnswer = async () => {
-    const data = await searchDeezer(songRef.current.value) // add current.value ?
-    setAns(data);
-    navigate(`/search/${songRef.current.value}`)
+    if (songRef.current.value !== "") {
+      const data = await searchDeezer(songRef.current.value) // add current.value ?
+      setAns(data);
+      navigate(`/search/${songRef.current.value}`)
+    }
   };
 
   useEffect(() => {
@@ -41,12 +43,13 @@ const Searcher = () => {
               Search
             </button>
             <input ref={songRef}
+                   placeholder="What song are you're looking for?"
                    className="form-control w-75"/>
           </li>
           {ans !== undefined ?
               ans.data.map((dataPoint) => (<SearchResult data={dataPoint}/>))
               :
-              "Fail"
+              ""
           }
         </ul>
       </div>
