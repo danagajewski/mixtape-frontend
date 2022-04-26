@@ -12,6 +12,7 @@ import {ProfileProvider} from "./components/Contexts/profile-context";
 import LoginNew from "./components/PreAuth/NewLogin";
 import Searcher from "./components/PostAuth/Search/Searcher";
 import SearchDetails from "./components/PostAuth/Search/SearchDetails";
+import Privacy from "./components/PreAuth/privacy";
 
 function App() {
   return (
@@ -35,6 +36,9 @@ function App() {
                 <Route path="auth/callback"
                        exact={true}
                        element={<Register/>}/>
+                <Route path="privacy"
+                       exact={true}
+                       element={<Privacy/>}/>
                 <Route path="mix/"
                        element={<Index/>}>
                   <Route index

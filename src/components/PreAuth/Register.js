@@ -30,7 +30,7 @@ const Register = () => {
           emailRef.current.value,
           passwordRef.current.value
       )
-      navigate('/mix')
+      navigate('/privacy')
     } catch (e) {
       setTakenUsername(true);
     }
