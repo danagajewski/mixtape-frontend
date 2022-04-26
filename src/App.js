@@ -12,6 +12,7 @@ import {ProfileProvider} from "./components/Contexts/profile-context";
 import LoginNew from "./components/PreAuth/NewLogin";
 import Searcher from "./components/PostAuth/Search/Searcher";
 import SearchDetails from "./components/PostAuth/Search/SearchDetails";
+import Privacy from "./components/PreAuth/privacy";
 
 function App() {
   return (
@@ -35,6 +36,9 @@ function App() {
                 <Route path="auth/callback"
                        exact={true}
                        element={<Register/>}/>
+                <Route path="privacy"
+                       exact={true}
+                       element={<Privacy/>}/>
                 <Route path="mix/"
                        element={<Index/>}>
                   <Route index
@@ -45,17 +49,17 @@ function App() {
                   <Route path="notifications"
                          exact={true}
                          element={<NotificationsScreen/>}/>
+                  <Route path="search"
+                         exact={true}
+                         element={<Searcher/>}/>
+                  <Route path="search/:searchString"
+                         element={<Searcher/>}/>
+                  <Route path="details/:searchDetailString"
+                         element={<SearchDetails/>}/>
                 </Route>
                 <Route path="profile"
                        exact={true}
                        element={<SecureRoute><Profile/></SecureRoute>}/>
-                <Route path="search"
-                       exact={true}
-                       element={<Searcher/>}/>
-                <Route path="search/:searchString"
-                       element={<Searcher/>}/>
-                <Route path="details/:searchDetailString"
-                       element={<SearchDetails/>}/>
               </Route>
             </Routes>
           </div>
