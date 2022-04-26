@@ -18,7 +18,7 @@ const UseAuth = (code) => {
           setExpiresIn(res.data.expiresIn)
 
     }).catch(() => {
-      window.location = "/home"
+      window.location = "/mix"
     })
   }, [code])
 
@@ -34,7 +34,7 @@ const UseAuth = (code) => {
         setExpiresIn(res.data.expiresIn)
       })
       .catch(() => {
-        window.location = "/home"
+        window.location = "/profile"
       })
     }, (expiresIn - 60) * 1000)
 

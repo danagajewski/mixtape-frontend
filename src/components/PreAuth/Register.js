@@ -1,14 +1,16 @@
 import React, {useRef, useState} from 'react';
 import LoginNew from "./NewLogin";
 import Dashboard from "./Dashboard"
-import {useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router";
 import {useProfile} from "../Contexts/profile-context";
 
 
 
 const Register = () => {
 
-  const code = new URLSearchParams(window.location.search).get('code')
+  const navigate = useNavigate();
+  //const code = new URLSearchParams(window.location.search).get("code")
+ // const state  = new URLSearchParams(window.location.search).get("state")
   const usernameRef = useRef()
   const emailRef = useRef()
   const passwordRef = useRef()
@@ -16,33 +18,49 @@ const Register = () => {
   //const navigate = useNavigate()
   const {signup} = useProfile()
   const handleSignupBtn = async () => {
+    if (usernameRef.current.value === '' ||
+        emailRef.current.value === '' ||
+        passwordRef.current.value === '' ) {
+      alert("All Fields must be filled!")
+      return
+    }
     try {
       await signup(
           usernameRef.current.value,
           emailRef.current.value,
           passwordRef.current.value
       )
-      //navigate('/profile')
+      navigate('/mix')
     } catch (e) {
-      alert('oops')
+      setTakenUsername(true);
     }
   }
 
   const [password, setPassword] = useState('');
   const [passwordC, setPasswordC] = useState('');
+  const [takenUsername, setTakenUsername] = useState(false)
 
   return (
-      <div className="row mix-login">
+      <div className="row mix-login mt-5">
         <div className="col-2 col-lg-3 col-xl-4"/>
         <div className="col-8 col-lg-6 col-xl-4">
           <div className="container text-center">
             <img src={require("../../Style/logo.png")} alt=""/>
           </div>
-          <div className="form-group mt-3">
-            <label className="mx-2" htmlFor="username">Username</label>
-            <input type="text" className="form-control"
-                   id="username" ref={usernameRef} placeholder="iamcool2022"/>
-          </div>
+          {takenUsername === false ?
+              <div className="form-group mt-1">
+                <label className="mx-2" htmlFor="username">Username</label>
+                <input type="text" className="form-control"
+                       id="username" ref={usernameRef}/>
+              </div> :
+              <div className="form-group has-danger mt-1">
+                <label className="mx-2" htmlFor="username">Username</label>
+                <input type="text" className="form-control is-invalid"
+                       id="username" ref={usernameRef}/>
+                <div className="invalid-feedback">Username is taken
+                </div>
+              </div>
+          }
           <div className="form-group mt-1">
             <label className="mx-2" htmlFor="email">Email</label>
             <input type="email" className="form-control"
@@ -72,13 +90,11 @@ const Register = () => {
               </div>
           }
           <div className="container mt-3 d-flex justify-content-center">
-            <p>{code}</p>
-            {/*<LoginNew/>*/}
+            {/*<p>{code}</p>*/}
             <div className="container mt-1 d-flex justify-content-center">
-              <a href="/login-spotify"> <button type="button" onClick={() => handleSignupBtn()} className="btn btn-outline-light">Let's Rock</button></a>
+              <button type="button" onClick={() => handleSignupBtn()} className="btn btn-outline-light">Let's Rock</button>
             </div>
-            { (code === '') ? <LoginNew/> : <Dashboard/> }
-            <p>{code}</p>
+            {/*{ (code === null) ? <LoginNew/> : <Dashboard code={code} state={state}/> }*/}
           </div>
           <div className="row mt-1">
             <div className="col-5"><hr/></div>

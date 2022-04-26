@@ -1,27 +1,31 @@
-import React, {useEffect} from "react";
+import React, {useState} from "react";
 import UseAuth from './UseAuth'
-var SpotifyWebApi = require('spotify-web-api-node');
+import axios from "axios";
 // import { Container, Form } from "react-bootstrap";
 // import {useState, useEffect} from "react";
 // import SpotifyWebApi from 'spotify-web-api-node';
 // import Player from "./Player"
 // import TrackSearchResult from "./TrackSearchResult"
 
-const spotifyApi = new SpotifyWebApi({
-  clientId: "120d6eb199c6499998e0fe645309337b",
-})
+// const spotifyApi = new SpotifyWebApi({
+//   clientId: "120d6eb199c6499998e0fe645309337b",
+// })
 
+const Dashboard = ({code, state}) => {
+  const [accessToken, setAccessToken] = useState()
+  const [refreshToken, setRefreshToken] = useState()
+  const [expiresIn, setExpiresIn] = useState()
+  const api = axios.create({withCredentials: true})
 
+  api.get("http://localhost:4000/api/getToken/" + code)
+  .then(res => {
+    setAccessToken(res.accessToken)
+    setRefreshToken(res.data.refreshToken)
+    setExpiresIn(res.data.expiresIn)
 
-const Dashboard = (code) => {
-  const accessToken = UseAuth(code);
-  spotifyApi.setAccessToken(accessToken)
+  })
 
-  // useEffect(() => {
-  //   if (!accessToken) return
-  //   spotifyApi.setAccessToken(accessToken)
-  // }, [accessToken])
-
+  //const accessToken = UseAuth(code);
   // const [search, setSearch] = useState("")
   // const [searchResults, setSearchResults] = useState([])
   // const [playingTrack, setPlayingTrack] = useState()
@@ -68,9 +72,9 @@ const Dashboard = (code) => {
 
   return (
       <>
-        <h5>ACCESS TOKEN? {accessToken}</h5>
-        {/*<p>{code}</p>*/}
-        </>
+        <h1>access token</h1>
+        <h6>{accessToken}</h6>
+      </>
       // <Container className="d-flex flex-column py-2" style={{ height: "100vh" }}>
       //   <Form.Control
       //       type="search"

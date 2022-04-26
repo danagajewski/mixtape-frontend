@@ -45,17 +45,17 @@ function App() {
                   <Route path="notifications"
                          exact={true}
                          element={<NotificationsScreen/>}/>
+                  <Route path="search"
+                         exact={true}
+                         element={<Searcher/>}/>
+                  <Route path="search/:searchString"
+                         element={<Searcher/>}/>
+                  <Route path="details/:searchDetailString"
+                         element={<SearchDetails/>}/>
                 </Route>
                 <Route path="profile"
                        exact={true}
                        element={<SecureRoute><Profile/></SecureRoute>}/>
-                <Route path="search"
-                       exact={true}
-                       element={<Searcher/>}/>
-                <Route path="search/:searchString"
-                       element={<Searcher/>}/>
-                <Route path="details/:searchDetailString"
-                       element={<SearchDetails/>}/>
               </Route>
             </Routes>
           </div>
