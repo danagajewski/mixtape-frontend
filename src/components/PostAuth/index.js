@@ -7,8 +7,9 @@ import whoReducer from "./reducers/user-reducer";
 import notesReducer from "./reducers/notes-reducer";
 import {combineReducers, createStore} from "redux";
 import {Provider} from "react-redux";
+import FollowersReducer from "./reducers/followers-reducer";
 
-const reducers = combineReducers({notes: notesReducer,users: whoReducer});
+const reducers = combineReducers({notes: notesReducer,users: whoReducer, followers: FollowersReducer});
 
 const store = createStore(reducers);
 

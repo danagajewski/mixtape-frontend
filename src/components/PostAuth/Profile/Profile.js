@@ -2,6 +2,7 @@ import React, {useEffect, useRef, useState} from "react";
 import {useNavigate} from "react-router";
 import {useProfile} from "../../Contexts/profile-context";
 import axios from "axios";
+import MyProfileStats from "./profile-stats";
 
 const api = axios.create({
   withCredentials: true
@@ -10,6 +11,7 @@ const api = axios.create({
 const Profile = () => {
   let navigate = useNavigate();
   const {profile, signout, update} = useProfile()
+
 
   const logout = async () => {
     try {
@@ -95,7 +97,8 @@ const Profile = () => {
                        : "https://riverlegacy.org/wp-content/uploads/2021/07/blank-profile-photo.jpeg"}
               alt={""}/>
             </div>
-            <div className="form-group mt-2">
+            <MyProfileStats profile={profile}/>
+            <div className="form-group mt-1">
               <label className="mx-2" htmlFor="profile">Change Profile
                 Pic</label>
               <input type="text" className="form-control"
