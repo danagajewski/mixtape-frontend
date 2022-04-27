@@ -1,6 +1,6 @@
 [
-  {"icon": "fa-brands fa-twitter", "content": "", "active":false, "link": "/mix"},
-  {"icon": "fa-solid fa-hashtag", "content": "Explore", "active":true, "link": "/mix/explore"},
+  {"icon": "fa-solid fa-record-vinyl", "content": "", "active":false, "link": "/mix"},
+  {"icon": "fa-brands fa-searchengin", "content": "Search", "active":true, "link": "/mix/search"},
   {"icon": "fa-solid fa-bell", "content": "Notifications", "active":false, "link": "/mix"},
   {"icon": "fa-solid fa-envelope", "content": "Messages", "active":false, "link": "/mix"},
   {"icon": "fa-solid fa-bookmark", "content": "Bookmarks", "active":false, "link": "/mix"},

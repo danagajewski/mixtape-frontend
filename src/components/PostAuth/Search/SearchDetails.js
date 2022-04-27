@@ -2,9 +2,16 @@ import React, {useEffect, useRef, useState} from "react";
 
 import {searchDeezerById} from "../../services/deezer-service";
 import {useParams} from "react-router";
+import {useDispatch} from "react-redux";
+import {createNote} from "../../actions/notes-actions";
+import {useProfile} from "../../Contexts/profile-context";
 // import {useNavigate} from "react-router-dom";
 
 const SearchDetails = () => {
+  const dispatch = useDispatch();
+  const {profile, signout, update} = useProfile()
+  const [newTuit, setNewTuit] =
+      useState({tuit: 'New tuit', user : profile});
   const [ans, setAns] = useState()
   const {searchDetailString} = useParams()
   const songId = useRef()
@@ -35,6 +42,18 @@ const SearchDetails = () => {
           <img src={ans ? ans.artist.picture : ""}/>
           <p className="card-text">Some quick example text to build on the card
             title and make up the bulk of the card's content.</p>
+          <textarea className="form-control wd-whats-happening"
+                    onChange={(e) =>
+                        setNewTuit({
+                          ...newTuit,
+                          songId:songId.current,
+                          tuit: e.target.value
+                        })}/>
+          <button onClick={() =>
+              createNote(dispatch, newTuit)}
+                  className="btn btn-primary btn-block rounded-pill my-2 wd-tuit-button">
+            <i className="fa-solid fa-paper-plane"/>
+          </button>
         </div>
       </div>
   )

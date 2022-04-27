@@ -42,7 +42,7 @@ function App() {
                 <Route path="mix/"
                        element={<Index/>}>
                   <Route index
-                         element={<HomeScreen/>}/>
+                         element={<SecureRoute><HomeScreen/></SecureRoute>}/>
                   <Route path="explore"
                          exact={true}
                          element={<ExploreComponent/>}/>
@@ -55,8 +55,9 @@ function App() {
                   <Route path="search/:searchString"
                          element={<Searcher/>}/>
                   <Route path="details/:searchDetailString"
-                         element={<SearchDetails/>}/>
+                         element={<SecureRoute><SearchDetails/></SecureRoute>}/>
                 </Route>
+
                 <Route path="profile"
                        exact={true}
                        element={<SecureRoute><Profile/></SecureRoute>}/>

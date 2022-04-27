@@ -7,7 +7,7 @@ const SearchResult = (data) => {
   return (
       <li className="list-group-item d-flex justify-content-between align-items-center">
         <div onClick={() => {
-          navigate(`/details/${data.data.id}`)
+          navigate(`/mix/details/${data.data.id}`)
         }}>
           <div className="row">
             <div className="col-4">

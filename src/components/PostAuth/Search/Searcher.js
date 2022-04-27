@@ -17,7 +17,7 @@ const Searcher = () => {
     if (songRef.current.value !== "") {
       const data = await searchDeezer(songRef.current.value) // add current.value ?
       setAns(data);
-      navigate(`/search/${songRef.current.value}`)
+      navigate(`/mix/search/${songRef.current.value}`)
     }
   };
 

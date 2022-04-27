@@ -3,18 +3,20 @@ import {useDispatch}
   from "react-redux";
 
 import {createNote} from "../../actions/notes-actions";
+import {useProfile} from "../../Contexts/profile-context";
 
 const WhatsHappening = () => {
-
   const dispatch = useDispatch();
+  const {profile, signout, update} = useProfile()
   const [newTuit, setNewTuit] =
-      useState({tuit: 'New tuit'});
-
+      useState({tuit: 'New tuit', user : profile});
+  console.log(profile)
   return (
       <div className="row">
         <div className="col-2">
           <img className="wd-round-image mt-2 mx-3"
-               src="https://s3.amazonaws.com/images.berecruited.com/photos/athletes/dashboard/3817216.png?1494963118"
+               // src="https://s3.amazonaws.com/images.berecruited.com/photos/athletes/dashboard/3817216.png?1494963118"
+               src={profile.profile_pic}
                alt={""}/>
         </div>
         <div className="col-10">

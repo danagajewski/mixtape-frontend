@@ -46,6 +46,7 @@ const Note = ({
                 <i className="fas fa-remove float-end" onClick={() => deleteNote(dispatch, note)}/>
                 </span></p>
               <p className="wd-content">{note.tuit}</p>
+              <p className="wd-content">{note.songId}</p>
               {note.hasOwnProperty("attachments") && "image"
               in note.attachments ?
                   <img
