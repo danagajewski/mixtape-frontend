@@ -62,6 +62,7 @@ const Note = ({
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                           allowFullScreen/> :
                   <></>}
+              <h5>{note.songId ? note.songId : <></>}</h5>
               <NoteStats note={note}/>
 
             </div>

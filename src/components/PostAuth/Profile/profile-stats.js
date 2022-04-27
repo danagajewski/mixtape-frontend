@@ -5,7 +5,7 @@ import {findAllFollowers} from "../../actions/followers-actions";
 const MyProfileStats = ({profile}) => {
 
   const dispatch = useDispatch;
-  const follows = useSelector(state => state.followers)
+  const follows = useSelector(state => state.followers);
   useEffect(() => {findAllFollowers(dispatch)}, [])
   const followers = follows.filter(follow => follow.followed._id === profile._id).length;
   const followeds = follows.filter(follow => follow.follower._id === profile._id).length;

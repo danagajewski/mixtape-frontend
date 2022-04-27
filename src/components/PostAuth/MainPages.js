@@ -3,19 +3,9 @@ import React from "react";
 import NavigationSidebar from "./NavigationSidebar/NavigationSidebar";
 import './mixtape-home.css'
 import WhoToFollowList from "./WhoToFollow/WhoToFollowList";
-import whoReducer from "./reducers/user-reducer";
-import notesReducer from "./reducers/notes-reducer";
-import {combineReducers, createStore} from "redux";
-import {Provider} from "react-redux";
-import FollowersReducer from "./reducers/followers-reducer";
 
-const reducers = combineReducers({notes: notesReducer,users: whoReducer, followers: FollowersReducer});
-
-const store = createStore(reducers);
-
-const Index = () => {
+const MainPage = () => {
   return (
-      <Provider store={store}>
         <div className="row mt-2">
           <div className="col-2 col-lg-1 col-xl-2">
             <NavigationSidebar/>
@@ -27,8 +17,7 @@ const Index = () => {
             <WhoToFollowList/>
           </div>
         </div>
-      </Provider>
   );
 };
 
-export default Index;
+export default MainPage;

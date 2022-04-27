@@ -3,7 +3,7 @@ import SignIn from "./components/PreAuth/SignIn"
 import Register from "./components/PreAuth/Register"
 import HomeScreen from "./components/PostAuth/Homepage/HomeScreen";
 import ExploreComponent from "./components/PostAuth/Explore/ExploreComponent";
-import Index from "./components/PostAuth";
+import Index from "./components";
 import NotificationsScreen
   from "./components/PostAuth/Notifications/NotificationsScreen";
 import Profile from "./components/PostAuth/Profile/Profile";
@@ -13,6 +13,7 @@ import LoginNew from "./components/PreAuth/NewLogin";
 import Searcher from "./components/PostAuth/Search/Searcher";
 import SearchDetails from "./components/PostAuth/Search/SearchDetails";
 import Privacy from "./components/PreAuth/privacy";
+import MainPage from "./components/PostAuth/MainPages";
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
         <BrowserRouter>
           <div className="container">
             <Routes>
-              <Route path="/">
+              <Route path="/"
+                     element={<Index/>}>
                 <Route path="login"
                        exact={true}
                        element={<SignIn/>}/>
@@ -40,7 +42,7 @@ function App() {
                        exact={true}
                        element={<Privacy/>}/>
                 <Route path="mix/"
-                       element={<Index/>}>
+                       element={<MainPage/>}>
                   <Route index
                          element={<SecureRoute><HomeScreen/></SecureRoute>}/>
                   <Route path="explore"
@@ -57,10 +59,11 @@ function App() {
                   <Route path="details/:searchDetailString"
                          element={<SecureRoute><SearchDetails/></SecureRoute>}/>
                 </Route>
-
                 <Route path="profile"
                        exact={true}
                        element={<SecureRoute><Profile/></SecureRoute>}/>
+
+
               </Route>
             </Routes>
           </div>
