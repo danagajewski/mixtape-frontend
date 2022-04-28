@@ -19,6 +19,7 @@ const SignIn = () => {
     }
   }
   return (
+
       <div className="row mix-login">
         <div className="col-2 col-lg-3 col-xl-4"/>
         <div className="col-8 col-lg-6 col-xl-4">

@@ -15,6 +15,7 @@ import SearchDetails from "./components/PostAuth/Search/SearchDetails";
 import Privacy from "./components/PreAuth/privacy";
 import MainPage from "./components/PostAuth/MainPages";
 import Profile from "./components/PostAuth/Profile/Profile";
+import SemiSecureRoute from "./components/Secure/semi-secure-route";
 
 function App() {
   return (
@@ -45,7 +46,7 @@ function App() {
                 <Route path="mix/"
                        element={<MainPage/>}>
                   <Route index
-                         element={<SecureRoute><HomeScreen/></SecureRoute>}/>
+                         element={<SemiSecureRoute><HomeScreen/></SemiSecureRoute>}/>
                   <Route path="explore"
                          exact={true}
                          element={<ExploreComponent/>}/>
@@ -65,7 +66,7 @@ function App() {
                        element={<SecureRoute><MyProfile/></SecureRoute>}/>
                 <Route path="profile/:pid"
                        exact={true}
-                       element={<Profile/>}/>
+                       element={<SemiSecureRoute><Profile/></SemiSecureRoute>}/>
               </Route>
             </Routes>
           </div>

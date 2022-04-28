@@ -1,3 +1,8 @@
 .mix-login {
   margin-top: 10%;
 }
+
+button.mix-follow {
+  width: 100%;
+  color: red;
+}

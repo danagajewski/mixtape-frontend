@@ -4,10 +4,6 @@ import {useProfile} from "../../Contexts/profile-context";
 import axios from "axios";
 import MyProfileStats from "./profile-stats";
 
-const api = axios.create({
-  withCredentials: true
-});
-
 const MyProfile = () => {
   let navigate = useNavigate();
   const {profile, signout, update} = useProfile()

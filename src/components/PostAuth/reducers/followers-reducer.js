@@ -1,4 +1,4 @@
-import {FOLLOW, UNFOLLOW, FIND_ALL_FOLLOWERS}
+import {FOLLOW, UNFOLLOW, FIND_ALL_FOLLOWERS, FIND_FOLLOW}
   from "../../actions/followers-actions";
 
 const FollowersReducer = (state = [], action) => {
@@ -7,7 +7,7 @@ const FollowersReducer = (state = [], action) => {
       return action.followers;
     case UNFOLLOW:
       return state.filter(
-          follow => follow.follower !== action.follower._id && follow.followed !== action.followed._id);
+          follow => follow.follower !== action.follower && follow.followed !== action.followed);
     case FOLLOW:
       return [
         ...state,

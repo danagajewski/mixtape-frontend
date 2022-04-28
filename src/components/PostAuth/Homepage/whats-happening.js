@@ -1,17 +1,13 @@
 import React, {useState} from "react";
 import {useDispatch}
   from "react-redux";
-
 import {createNote} from "../../actions/notes-actions";
-import {useProfile} from "../../Contexts/profile-context";
 
-const WhatsHappening = () => {
+const WhatsHappening = ({profile}) => {
 
   const dispatch = useDispatch();
-  const {profile, signout, update} = useProfile()
   const [newTuit, setNewTuit] =
       useState({tuit: 'New tuit', user : profile});
-  console.log(profile)
   return (
       <div className="row">
         <div className="col-2">

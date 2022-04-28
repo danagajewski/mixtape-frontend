@@ -8,13 +8,14 @@ export const findAllFollowers = async (profileId) => {
 }
 
 export const unfollow = async (follower, followed) => {
-  const follows = {follower: follower._id, followed: followed._id};
-  const response = await axios.delete(FOLLOWERS_API, follows);
+  const follows = {follower: follower, followed: followed};
+  console.log(follows)
+  const response = await axios.post(FOLLOWERS_API+'/unfollow', follows);
   return response.data;
 }
 
 export const follow = async (follower, followed) => {
-  const follows = {follower: follower._id, followed: followed._id};
+  const follows = {follower: follower, followed: followed};
   const response = await axios.post(FOLLOWERS_API, follows);
   return response.data;
 }

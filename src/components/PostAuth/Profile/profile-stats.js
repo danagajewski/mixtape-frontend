@@ -1,10 +1,8 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {findAllFollowers} from "../../actions/followers-actions";
-import {findAllNotes} from "../../actions/notes-actions";
 
 const MyProfileStats = ({ProfileId}) => {
-  console.log(ProfileId)
   const follows = useSelector(
       state => state.followers);
   const dispatch = useDispatch();

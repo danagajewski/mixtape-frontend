@@ -1,14 +1,15 @@
 import React from "react";
 import NoteList from '../NoteList/NoteList'
 import WhatsHappening from "./whats-happening";
+import {useProfile} from "../../Contexts/profile-context";
 
-import Player from "./Player";
 
 const HomeScreen = () => {
+  const {profile} = useProfile()
+
   return(
       <div>
-        {/*<Player/>*/}
-        <WhatsHappening/>
+        {profile?<WhatsHappening profile={profile}/>:<></>}
         <NoteList/>
       </div>
   )

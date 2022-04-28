@@ -14,6 +14,13 @@ label.wd-full-width {
 
 }
 
+button.mix-follow {
+    width: 180px;
+    border-radius: 50px;
+    height: 30px;
+
+    padding: 0;
+}
 
 .wd-explore-profile {
     margin-left: 6px;

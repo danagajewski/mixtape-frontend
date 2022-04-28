@@ -3,6 +3,7 @@ import * as service from '../services/followers-service';
 export const FOLLOW = 'FOLLOW';
 export const FIND_ALL_FOLLOWERS = 'FIND_ALL_FOLLOWERS';
 export const UNFOLLOW = 'UNFOLLOW';
+export const FIND_FOLLOW = 'FIND_FOLLOW'
 
 export const follow = async (dispatch, follower, followed) => {
   const follow = await service.follow(follower, followed);
@@ -19,6 +20,7 @@ export const unfollow = async (dispatch, follower, followed) => {
     followed
   })
 }
+
 export const findAllFollowers = async (dispatch, profileId) => {
   const followers = await service.findAllFollowers(profileId);
   dispatch({
@@ -26,3 +28,4 @@ export const findAllFollowers = async (dispatch, profileId) => {
     followers
   });
 }
+
