@@ -6,6 +6,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useProfile} from "../../Contexts/profile-context";
 import FollowButton from "./FollowButton";
 import '../mixtape-home.css'
+import ProfileNotes from "./ProfileNotes";
 
 const Profile = () => {
   const {profile} = useProfile();
@@ -43,7 +44,8 @@ const Profile = () => {
           </div>
           <MyProfileStats ProfileId={userId}/>
           {profile ? <FollowButton profile={profile} userId={userId}/> : <></>}
-          <div className="container text-center">
+          <ProfileNotes profileId={userId}/>
+          <div className="container text-center mt-2">
             <button type="button" onClick={() => goBack()}
                     className="btn btn-outline-light mt-3">Back
             </button>
