@@ -6,7 +6,7 @@ import ExploreComponent from "./components/PostAuth/Explore/ExploreComponent";
 import Index from "./components";
 import NotificationsScreen
   from "./components/PostAuth/Notifications/NotificationsScreen";
-import Profile from "./components/PostAuth/Profile/Profile";
+import MyProfile from "./components/PostAuth/Profile/MyProfile";
 import SecureRoute from "./components/Secure/secure-route";
 import {ProfileProvider} from "./components/Contexts/profile-context";
 import LoginNew from "./components/PreAuth/NewLogin";
@@ -14,6 +14,7 @@ import Searcher from "./components/PostAuth/Search/Searcher";
 import SearchDetails from "./components/PostAuth/Search/SearchDetails";
 import Privacy from "./components/PreAuth/privacy";
 import MainPage from "./components/PostAuth/MainPages";
+import Profile from "./components/PostAuth/Profile/Profile";
 
 function App() {
   return (
@@ -61,9 +62,10 @@ function App() {
                 </Route>
                 <Route path="profile"
                        exact={true}
-                       element={<SecureRoute><Profile/></SecureRoute>}/>
-
-
+                       element={<SecureRoute><MyProfile/></SecureRoute>}/>
+                <Route path="profile/:pid"
+                       exact={true}
+                       element={<Profile/>}/>
               </Route>
             </Routes>
           </div>

@@ -19,8 +19,8 @@ export const unfollow = async (dispatch, follower, followed) => {
     followed
   })
 }
-export const findAllFollowers = async (dispatch) => {
-  const followers = await service.findAllFollowers();
+export const findAllFollowers = async (dispatch, profileId) => {
+  const followers = await service.findAllFollowers(profileId);
   dispatch({
     type: FIND_ALL_FOLLOWERS,
     followers

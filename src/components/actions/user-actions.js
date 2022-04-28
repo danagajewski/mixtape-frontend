@@ -27,8 +27,8 @@ export const deleteUser = async (dispatch, user) => {
   });
 }
 
-export const findUser = async (dispatch, user) => {
-  await service.findUser(user);
+export const findUser = async (dispatch, userId) => {
+  const user = await service.findUser(userId);
   dispatch({
     type: FIND_USER,
     user

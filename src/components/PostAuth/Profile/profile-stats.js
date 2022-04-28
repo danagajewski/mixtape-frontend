@@ -1,20 +1,24 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {findAllFollowers} from "../../actions/followers-actions";
+import {findAllNotes} from "../../actions/notes-actions";
 
-const MyProfileStats = ({profile}) => {
+const MyProfileStats = ({ProfileId}) => {
+  console.log(ProfileId)
+  const follows = useSelector(
+      state => state.followers);
+  const dispatch = useDispatch();
+  useEffect(() => {findAllFollowers(dispatch, ProfileId)}, []);
 
-  const dispatch = useDispatch;
-  const follows = useSelector(state => state.followers);
-  useEffect(() => {findAllFollowers(dispatch)}, [])
-  const followers = follows.filter(follow => follow.followed._id === profile._id).length;
-  const followeds = follows.filter(follow => follow.follower._id === profile._id).length;
+
+  const followers = follows.filter(follow => follow.followed === ProfileId).length;
+  const followeds = follows.filter(follow => follow.follower === ProfileId).length;
+
 
   return (
-      <div className="d-flex justify-content-around mt-2">
-        <span><p>Followers</p> {followers}</span>
-        <span><p>Follows</p> {followeds}</span>
-        <span><i className="fa-solid fa-arrow-up-right-from-square"/></span>
+      <div className="d-flex justify-content-center mt-2">
+        <p className="mx-1">Followers <span>{followers}</span></p>
+        <p className="mx-1">Following <span>{followeds}</span></p>
       </div>
   );
 }
