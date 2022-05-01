@@ -10,8 +10,8 @@ const NoteStats = ({note}) => {
       <div className="d-flex justify-content-around">
 
 
-        <span><i className="fa-solid fa-comment"/> {note.comments
-            && note.comments}</span>
+        {/*<span><i className="fa-solid fa-comment"/> {note.comments*/}
+        {/*    && note.comments}</span>*/}
         {/*<span><i className="fa-solid fa-retweet"/> {note.retuits*/}
         {/*    && note.retuits}</span>*/}
         <span onClick={() => updateNote(dispatch, {
@@ -25,8 +25,8 @@ const NoteStats = ({note}) => {
               <i className="far fa-heart me-1"/>}
           {note.likes !== 0 && note.likes}
           </span>
-        <span><i className="fa-solid fa-arrow-up-right-from-square"
-        onClick={()=> {navigate(`/mix/details/${note.songId}`)}}/></span>
+        {/*<span><i className="fa-solid fa-arrow-up-right-from-square"*/}
+        {/*onClick={()=> {navigate(`/mix/details/${note.songId}`)}}/></span>*/}
       </div>
   );
 }

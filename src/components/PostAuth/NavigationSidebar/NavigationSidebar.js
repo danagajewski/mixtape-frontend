@@ -8,10 +8,6 @@ const NavigationSidebar = (
   return (
       <>
         {NavigateList()}
-        <div className="d-grid mt-2">
-          <a href="tweet.html"
-            className="btn btn-primary btn-block rounded-pill">Tweet</a>
-        </div>
       </>
     );
 }

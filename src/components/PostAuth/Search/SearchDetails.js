@@ -13,7 +13,7 @@ const SearchDetails = () => {
   const songId = useRef()
 
   const [newTuit, setNewTuit] =
-      useState({tuit: 'New tuit', username : profile.username,
+      useState({tuit: 'New tuit', user: profile, username : profile.username,
         profilePicture:profile.profile_pic,
         songId:songId.current});
   const [ans, setAns] = useState()

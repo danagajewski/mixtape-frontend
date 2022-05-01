@@ -9,7 +9,9 @@ const NoteList = () => {
   const notes = useSelector(
       state => state.notes);
   const dispatch = useDispatch();
-  useEffect(() => {findAllNotes(dispatch)}, []);
+  useEffect(() => {
+    findAllNotes(dispatch)
+  }, []);
 
   return (
       <ul className="list-group">

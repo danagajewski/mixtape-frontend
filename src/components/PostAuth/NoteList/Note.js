@@ -3,6 +3,7 @@ import {useDispatch} from "react-redux";
 import NoteStats from "./note-stats";
 import {deleteNote} from "../../actions/notes-actions";
 import {searchDeezerById} from "../../services/deezer-service";
+import '/Users/liorzippel/Desktop/Spring2022/webdev/mixtape-frontend/src/components/PostAuth/mixtape-home.css'
 
 const Note = ({
   note = {
@@ -50,6 +51,7 @@ const Note = ({
         <div className="card-header">
           <span style={{"font-size":"15px"}}> {note.username} commented on</span>
         </div>
+        <a href={`mix/details/${note.songId}`} className="mt-no-underline">
         <div className="card-header">
           <div className="row">
             <div className="col-2">
@@ -64,6 +66,7 @@ const Note = ({
             </div>
           </div>
         </div>
+        </a>
         <div className="row card-body p-1 m-1 ">
 
 

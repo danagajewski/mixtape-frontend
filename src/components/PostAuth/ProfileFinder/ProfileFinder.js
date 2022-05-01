@@ -12,14 +12,14 @@ const ProfileFinder = () => {
   useEffect(() => {
     findAllUsers(dispatch)
   }, []);
-  console.log(users)
+  console.log("USERS:",users)
   return (
 
       <ul className="list-group">
         <li className="list-group-item">
           <h5>Profiles:</h5>
         </li>
-        {users !== undefined ?
+        {users && users.constructor !== Object ?
             users.map((user) => (<ProfileCard data={user}/>))
             :
             ""

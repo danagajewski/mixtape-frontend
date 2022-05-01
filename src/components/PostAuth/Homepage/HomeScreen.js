@@ -10,7 +10,7 @@ const HomeScreen = () => {
 
   return(
       <div>
-        {profile?<WhatsHappening profile={profile}/>:<></>}
+        {/*{profile?<WhatsHappening profile={profile}/>:<></>}*/}
         <NoteList/>
       </div>
   )

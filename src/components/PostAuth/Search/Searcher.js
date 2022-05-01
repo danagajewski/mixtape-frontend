@@ -33,8 +33,6 @@ const Searcher = () => {
   console.log(ans === undefined)
   return (
       <div>
-        <h1>Search me!</h1>
-
         <ul className="list-group">
           <li className="list-group-item">
             <button
