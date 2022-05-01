@@ -25,6 +25,8 @@ const MyProfile = () => {
     "token": profile.token,
     "refresh_token": profile.refresh_token,
     "profile_pic": profile.profile_pic,
+    "admin": profile.admin,
+    "verified": profile.verified
   }
   const [index, setIndex] = useState(0);
   const [subIndex, setSubIndex] = useState(0);
@@ -81,7 +83,7 @@ const MyProfile = () => {
                       className="btn btn-outline-light mix-follow">{editProfile?'Done':'Edit Profile'}</button>
             </div>
             {editProfile?<EditProfile profile={profile}/> : <></>}
-            <ProfileNotes profileId={profile._id}/>
+            {editProfile?<></>:<ProfileNotes profileId={profile._id}/>}
           </div>
 
           <div className="col-1 col-lg-2 col-xl-3"/>

@@ -22,6 +22,8 @@ const EditProfile = ({profile}) => {
     "token": profile.token,
     "refresh_token": profile.refresh_token,
     "profile_pic": profile.profile_pic,
+    "verified": profile.verified,
+    "admin":profile.admin
   }
 
   const logout = async () => {
@@ -39,8 +41,7 @@ const EditProfile = ({profile}) => {
       updatedUser.password = passwordRef.current.value;
       updatedUser.email = emailRef.current.value;
       updatedUser.profile_pic = profilePicRef.current.value;
-      update(updatedUser);
-      navigate('/profile');
+      update(updatedUser, profile._id);
 
     }
   }
@@ -105,7 +106,6 @@ const EditProfile = ({profile}) => {
           </a>
         </div>
         <div className="container mt-1 d-flex justify-content-center">
-          {/*todo: the a tag needs to be replaced*/}
           <a href={"/login"}>
             <button type="button" onClick={logout}
                     className="btn btn-outline-danger mt-1">Log Out

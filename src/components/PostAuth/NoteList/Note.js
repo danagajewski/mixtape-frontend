@@ -45,7 +45,7 @@ const Note = ({
   console.log(note)
   console.log(ans)
   return (
-      <div className="card wd-middle">
+      <div className="card wd-middle mt-1">
 
         <div className="card-header">
           <span style={{"font-size":"15px"}}> {note.username} commented on</span>

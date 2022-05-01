@@ -19,6 +19,7 @@ import SemiSecureRoute from "./components/Secure/semi-secure-route";
 import Followers from "./components/PostAuth/Followers/Followers";
 import Following from "./components/PostAuth/Followers/Following";
 import ProfileFinder from "./components/PostAuth/ProfileFinder/ProfileFinder";
+import Profiles from "./components/PostAuth/Profile/Profiles";
 
 function App() {
   return (
@@ -49,7 +50,8 @@ function App() {
                 <Route path="mix/"
                        element={<MainPage/>}>
                   <Route index
-                         element={<SemiSecureRoute><HomeScreen/></SemiSecureRoute>}/>
+                         element={
+                           <SemiSecureRoute><HomeScreen/></SemiSecureRoute>}/>
                   <Route path="explore"
                          exact={true}
                          element={<ExploreComponent/>}/>
@@ -67,18 +69,21 @@ function App() {
                   <Route path="details/:searchDetailString"
                          element={<SecureRoute><SearchDetails/></SecureRoute>}/>
                 </Route>
-                <Route path="profile"
+                <Route path="profile/"
                        exact={true}
-                       element={<SecureRoute><MyProfile/></SecureRoute>}/>
-                <Route path="profile/:pid"
-                       exact={true}
-                       element={<SemiSecureRoute><Profile/></SemiSecureRoute>}/>
-                <Route path="profile/followers/:pid"
-                       exact={true}
-                       element={<Followers/>}/>
-                <Route path="profile/following/:pid"
-                       exact={true}
-                       element={<Following/>}/>
+                       element={<Profiles/>}>
+                  <Route index
+                         element={<SecureRoute><MyProfile/></SecureRoute>}/>
+                  <Route path=":pid"
+                         exact={true}
+                         element={<SemiSecureRoute><Profile/></SemiSecureRoute>}/>
+                  <Route path="followers/:pid"
+                         exact={true}
+                         element={<Followers/>}/>
+                  <Route path="following/:pid"
+                         exact={true}
+                         element={<Following/>}/>
+                </Route>
               </Route>
             </Routes>
           </div>

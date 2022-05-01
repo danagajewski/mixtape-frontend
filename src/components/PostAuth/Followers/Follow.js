@@ -25,9 +25,9 @@ const Follow = ({follow}) => {
                      alt={""}
                      className="wd-round-image"/>
               </div>
-              <div className="col-10">
-                <p className="wd-content-main">{user.username} {user.verified
-                    ? <i className="fa-solid fa-check-circle"/> : ""}</p>
+              <div className="col-10 mt-2">
+                <h4 className="wd-content-main">{user.username} {user.verified
+                    ? <i className="fa-solid fa-check-circle"/> : ""}</h4>
               </div>
             </div>
           </a>

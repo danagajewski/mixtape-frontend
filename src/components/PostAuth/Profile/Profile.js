@@ -37,7 +37,7 @@ const Profile = () => {
                  alt={""}/>
           </div>
           <div className="container text-center">
-            <h3>{user.username}</h3>
+            <h3>{user.username} {user.verified ? <i className="fa-solid fa-check-circle"/> : ""}</h3>
           </div>
           <MyProfileStats ProfileId={userId}/>
           {profile ? <FollowButton profile={profile} userId={userId}/> : <></>}
