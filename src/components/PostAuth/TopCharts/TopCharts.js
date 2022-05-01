@@ -16,16 +16,16 @@ const TopCharts = () => {
   }
   return (
       <>
-        <ul className="list-group" style={{"list-style-type":"none"}}>
-          <li>
+        <div className="list-group" style={{"list-style-type":"none"}}>
+          <div className="list-group-item list-group-item-action active">
             <h4 style={{textAlign: "center"}}>Top Tracks Today</h4>
-          </li>
+          </div>
           {ans !== undefined ?
               ans.content.slice(0,10).map((dataPoint) => (<ChartSong data={dataPoint}/>))
               :
               ""
           }
-        </ul>
+        </div>
       </>
   );
 }

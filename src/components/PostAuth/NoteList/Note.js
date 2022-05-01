@@ -78,6 +78,7 @@ const Note = ({
                   ? <i className="fa-solid fa-check-circle"/> : ""} <span
                   className="wd-handle">@{note.handle}</span> <span
                   className="wd-handle"> - {note.time}
+
                 <i className="fas fa-remove float-end"
                    onClick={() => deleteNote(dispatch, note)}/>
                 </span></p>

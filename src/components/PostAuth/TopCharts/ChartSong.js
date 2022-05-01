@@ -5,9 +5,10 @@ const ChartSong = (data) => {
   console.log(data)
   const navigate = useNavigate()
   return(
-      <li className="list-group-item justify-content-between align-items-center">
-        <div onClick={() => {navigate(`/mix/search/${data.data.track_title}`)}}>
-          <div className="row">
+      // <li className="list-group-item justify-content-between align-items-center">
+      //   <div onClick={() => {navigate(`/mix/search/${data.data.track_title}`)}}>
+      <a href={`/mix/search/${data.data.track_title}`} className="list-group-item list-group-item-action">
+        <div className="row">
             <div className="col-2">
               {data.data.trend === "up" ?
                   <i className="fa-solid fa-arrow-up" style={{color: "#00ff99"}}/>
@@ -27,12 +28,10 @@ const ChartSong = (data) => {
             <div className="col-3">
               <span>{data.data.artists[0]}</span>
             </div>
-            {/*<button onClick={() => {navigate(`/details/${data.data.id}`)}}>Click Me</button>*/}
-          </div>
         </div>
+            {/*<button onClick={() => {navigate(`/details/${data.data.id}`)}}>Click Me</button>*/}
+      </a>
 
-
-      </li>
   )
 
 }

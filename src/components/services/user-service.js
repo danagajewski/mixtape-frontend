@@ -25,6 +25,6 @@ export const findUser = async (user) => {
 }
 
 export const findAllUsers = async () => {
-  const response = await axios.get(`${USER_API}/users`)
+  const response = await axios.get(`${USER_API}`)
   return response.data;
 }
