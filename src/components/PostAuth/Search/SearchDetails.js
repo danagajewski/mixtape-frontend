@@ -10,11 +10,15 @@ import {useProfile} from "../../Contexts/profile-context";
 const SearchDetails = () => {
   const dispatch = useDispatch();
   const {profile, signout, update} = useProfile()
+  const songId = useRef()
+
   const [newTuit, setNewTuit] =
-      useState({tuit: 'New tuit', user : profile});
+      useState({tuit: 'New tuit', username : profile.username,
+        profilePicture:profile.profile_pic,
+        songId:songId.current});
   const [ans, setAns] = useState()
   const {searchDetailString} = useParams()
-  const songId = useRef()
+
 
   const getAnswer = async () => {
     if (songId.current.value !== "") {
@@ -29,9 +33,10 @@ const SearchDetails = () => {
       getAnswer()
     }
   }, [])
-  console.log(ans)
+  console.log(profile)
   // console.log(searchDetailString)
-
+  console.log(songId.current)
+  console.log(newTuit)
   return (
       // <h1>Success</h1>
       <div className="card border-primary mb-3" >

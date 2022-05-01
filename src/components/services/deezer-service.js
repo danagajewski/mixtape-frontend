@@ -32,4 +32,18 @@ export const searchDeezerById = async (searchId) => {
   return response.data;
 }
 
+export const getSongChartDeezer = async () => {
+
+  const options = {
+    method: 'GET',
+    url : 'https://api.deezer.com/chart/0/tracks',
+    headers : {
+      'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com',
+      'X-RapidAPI-Key': API_KEY
+    }
+  }
+  const response = await axios.request(options);
+  return response.data;
+}
+
 

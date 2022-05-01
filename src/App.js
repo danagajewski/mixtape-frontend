@@ -18,6 +18,7 @@ import Profile from "./components/PostAuth/Profile/Profile";
 import SemiSecureRoute from "./components/Secure/semi-secure-route";
 import Followers from "./components/PostAuth/Followers/Followers";
 import Following from "./components/PostAuth/Followers/Following";
+import ProfileFinder from "./components/PostAuth/ProfileFinder/ProfileFinder";
 
 function App() {
   return (
@@ -58,6 +59,9 @@ function App() {
                   <Route path="search"
                          exact={true}
                          element={<Searcher/>}/>
+                  <Route path="profilefinder"
+                         exact={true}
+                         element={<ProfileFinder/>}/>
                   <Route path="search/:searchString"
                          element={<Searcher/>}/>
                   <Route path="details/:searchDetailString"

@@ -2,7 +2,8 @@ import {
   CREATE_USER,
   DELETE_USER,
   FIND_USER,
-  UPDATE_USER
+  UPDATE_USER,
+  FIND_ALL_USERS
 } from "../../actions/user-actions";
 
 const userReducer = (state = [], action) => {
@@ -21,6 +22,9 @@ const userReducer = (state = [], action) => {
       return state.map(
           user => user._id === action.user._id ?
               action.user : user);
+
+    case FIND_ALL_USERS:
+      return action.users
     default:
       return state;
   }

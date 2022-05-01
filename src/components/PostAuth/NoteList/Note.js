@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {useDispatch} from "react-redux";
 import NoteStats from "./note-stats";
 import {deleteNote} from "../../actions/notes-actions";
+import {searchDeezerById} from "../../services/deezer-service";
 
 const Note = ({
   note = {
@@ -29,47 +30,67 @@ const Note = ({
   }
 }) => {
   const dispatch = useDispatch();
+  const [ans, setAns] = useState();
+  const getAnswer = async () => {
+    if (note.songId) {
+      const data = await searchDeezerById(note.songId)
+      setAns(data)
+    }
+  }
 
-  return (<div className="card wd-middle">
+  useEffect(() => {
+    getAnswer()
+  }, [])
 
+  console.log(note)
+  console.log(ans)
+  return (
+      <div className="card wd-middle">
 
+        <div className="card-header">
+          <span style={{"font-size":"15px"}}> {note.username} commented on</span>
+        </div>
+        <div className="card-header">
+          <div className="row">
+            <div className="col-2">
+              <img src={ans ? ans.album.cover_small : ''} style={{
+                'borderRadius': '10px'
+              }}/>
+            </div>
+            <div className="col-8">
+              <h5 className="card-title">{ans ? ans.title : ''}</h5>
+              <h6 className="card-subtitle text-muted">By {ans
+                  ? ans.artist.name : ''}</h6>
+            </div>
+          </div>
+        </div>
         <div className="row card-body p-1 m-1 ">
+
+
           <div className="row">
             <div className="col-2 my-2">
-              <img src={note.avatar_image} alt={""} className="wd-round-image"/>
+              <img src={note.profilePicture} alt={""}
+                   className="wd-round-image"/>
+              {/*<img src="" alt={""} className="wd-round-image"/>*/}
             </div>
             <div className="col-10">
-              <p className="wd-content-ends"> {note.topic}</p>
-              <p className="wd-content-main">{"postedBy" in note ? note.postedBy.username : "Dana Gajewski"} {note.verified
-                  ? <i className="fa-solid fa-check-circle"/> : ""} <span className="wd-handle">@{note.handle}</span> <span
+              <p className="wd-content-main">{note.username} {note.verified
+                  ? <i className="fa-solid fa-check-circle"/> : ""} <span
+                  className="wd-handle">@{note.handle}</span> <span
                   className="wd-handle"> - {note.time}
-                <i className="fas fa-remove float-end" onClick={() => deleteNote(dispatch, note)}/>
+                <i className="fas fa-remove float-end"
+                   onClick={() => deleteNote(dispatch, note)}/>
                 </span></p>
+
+
+
               <p className="wd-content">{note.tuit}</p>
-              <p className="wd-content">{note.songId}</p>
-              {note.hasOwnProperty("attachments") && "image"
-              in note.attachments ?
-                  <img
-                      src={note.attachments.image}
-                      className="wd-rounded-edges my-2" alt={""}/> :
-                  <></>}
-              {note.hasOwnProperty("attachments") && "video"
-              in note.attachments ?
-                  <iframe height={250} className="my-2 wd-rounded-edges"
-                          src={"https://www.youtube.com/embed/"
-                              + note.attachments.video}
-                          title="YouTube video player" frameBorder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen/> :
-                  <></>}
-              <h5>{note.songId ? note.songId : <></>}</h5>
               <NoteStats note={note}/>
 
             </div>
           </div>
         </div>
       </div>
-
 
   );
 }

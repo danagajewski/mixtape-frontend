@@ -23,3 +23,8 @@ export const findUser = async (user) => {
   const response = await axios.get(`${USER_API}/${user}`);
   return response.data;
 }
+
+export const findAllUsers = async () => {
+  const response = await axios.get(`${USER_API}/users`)
+  return response.data;
+}

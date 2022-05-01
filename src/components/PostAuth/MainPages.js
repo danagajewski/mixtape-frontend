@@ -3,6 +3,7 @@ import React from "react";
 import NavigationSidebar from "./NavigationSidebar/NavigationSidebar";
 import './mixtape-home.css'
 import WhoToFollowList from "./WhoToFollow/WhoToFollowList";
+import TopCharts from "./TopCharts/TopCharts";
 
 const MainPage = () => {
   return (
@@ -14,7 +15,7 @@ const MainPage = () => {
             <Outlet/>
           </div>
           <div className="d-none d-lg-block col-lg-4 col-xl-4">
-            <WhoToFollowList/>
+            <TopCharts/>
           </div>
         </div>
   );
