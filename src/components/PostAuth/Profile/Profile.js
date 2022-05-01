@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import {useNavigate, useParams} from "react-router";
 import MyProfileStats from "./profile-stats";
 import {findUser} from "../../actions/user-actions";
@@ -7,6 +7,7 @@ import {useProfile} from "../../Contexts/profile-context";
 import FollowButton from "./FollowButton";
 import '../mixtape-home.css'
 import ProfileNotes from "./ProfileNotes";
+import AdminButton from "./AdminButton";
 
 const Profile = () => {
   const {profile} = useProfile();
@@ -17,10 +18,6 @@ const Profile = () => {
       state => state.users);
   const dispatch = useDispatch();
   useEffect(() => {findUser(dispatch, userId)}, []);
-
-
-
-
 
 
   const goBack = () => {
@@ -44,6 +41,7 @@ const Profile = () => {
           </div>
           <MyProfileStats ProfileId={userId}/>
           {profile ? <FollowButton profile={profile} userId={userId}/> : <></>}
+          {profile !== undefined && profile.admin? <AdminButton user={user}/> : <></>}
           <ProfileNotes profileId={userId}/>
           <div className="container text-center mt-2">
             <button type="button" onClick={() => goBack()}

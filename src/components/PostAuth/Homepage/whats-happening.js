@@ -12,7 +12,8 @@ const WhatsHappening = ({profile}) => {
       <div className="row">
         <div className="col-2">
           <img className="wd-round-image mt-2 mx-3"
-               src={profile.profile_pic}
+               src={profile.profile_pic ? profile.profile_pic
+                   : "https://riverlegacy.org/wp-content/uploads/2021/07/blank-profile-photo.jpeg"}
                //src="https://s3.amazonaws.com/images.berecruited.com/photos/athletes/dashboard/3817216.png?1494963118"
                alt={""}/>
         </div>

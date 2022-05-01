@@ -6,6 +6,7 @@ import {useProfile} from "../../Contexts/profile-context";
 
 const HomeScreen = () => {
   const {profile} = useProfile()
+  console.log(profile)
 
   return(
       <div>

@@ -15,8 +15,8 @@ const MyProfileStats = ({ProfileId}) => {
 
   return (
       <div className="d-flex justify-content-center mt-2">
-        <p className="mx-1">Followers <span>{followers}</span></p>
-        <p className="mx-1">Following <span>{followeds}</span></p>
+        <a href={`profile/followers/${ProfileId}`} className='mt-no-underline'><p className="mx-1">Followers <span>{followers}</span></p></a>
+        <a href={`profile/following/${ProfileId}`} className='mt-no-underline'><p className="mx-1">Following <span>{followeds}</span></p></a>
       </div>
   );
 }

@@ -49,7 +49,7 @@ export const ProfileProvider = ({children}) => {
 
   const update = async (user) => {
     try {
-      await api.put("http://localhost:4000/api/users/" + user._id, user)
+      await api.put("http://localhost:4000/api/users/my" + user._id, user)
     } catch (e) {
       throw e
     }

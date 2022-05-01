@@ -7,7 +7,8 @@ import ProfileNotes from "./ProfileNotes";
 
 const MyProfile = () => {
 
-  const {profile} = useProfile()
+  const {profile} = useProfile();
+
   const [editProfile, setEditProfile]  = useState(false);
 
   const toggleEditProfile = () => {

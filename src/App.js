@@ -16,6 +16,8 @@ import Privacy from "./components/PreAuth/privacy";
 import MainPage from "./components/PostAuth/MainPages";
 import Profile from "./components/PostAuth/Profile/Profile";
 import SemiSecureRoute from "./components/Secure/semi-secure-route";
+import Followers from "./components/PostAuth/Followers/Followers";
+import Following from "./components/PostAuth/Followers/Following";
 
 function App() {
   return (
@@ -67,6 +69,12 @@ function App() {
                 <Route path="profile/:pid"
                        exact={true}
                        element={<SemiSecureRoute><Profile/></SemiSecureRoute>}/>
+                <Route path="profile/followers/:pid"
+                       exact={true}
+                       element={<Followers/>}/>
+                <Route path="profile/following/:pid"
+                       exact={true}
+                       element={<Following/>}/>
               </Route>
             </Routes>
           </div>
