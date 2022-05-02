@@ -14,9 +14,11 @@ const SearchDetails = () => {
   const songId = useRef()
 
   const [newTuit, setNewTuit] =
-      useState({tuit: 'New tuit', user: profile, username : profile.username,
-        profilePicture:profile.profile_pic,
-        songId:songId.current});
+      useState({
+        tuit: 'New tuit', user: profile, username: profile.username,
+        profilePicture: profile.profile_pic,
+        songId: songId.current
+      });
   const [ans, setAns] = useState()
   const {searchDetailString} = useParams()
 
@@ -34,16 +36,34 @@ const SearchDetails = () => {
       getAnswer()
     }
   }, [])
+  console.log(profile)
+  // console.log(searchDetailString)
+  console.log(songId.current)
+  console.log(newTuit)
   return (
       // <h1>Success</h1>
-      <div className="card border-primary mb-3" >
-        <div className="card-header">{ans ? ans.artist.name : ""}</div>
+      <div className="card border-primary mb-3">
+        <div className="card-header">
+          <img src={ans ? ans.artist.picture : ""}
+               className="img-rounded-corners" height="50px"/>
+          <span>  {ans ? ans.artist.name : ""}</span>
+
+        </div>
         <div className="card-body">
-          <h4 className="card-title">{ans ? ans.title : ""}</h4>
-          <h6 className="card-subtitle mb-2 text-muted">{ans ? ans.album.title : ""}</h6>
-          <img src={ans ? ans.artist.picture : ""}/>
-          <p className="card-text">Some quick example text to build on the card
-            title and make up the bulk of the card's content.</p>
+          <div className="row">
+            <div className="col-3">
+              <img src={ans ? ans.album.cover_medium : ""}
+                   className="img-rounded-corners"
+                  height="100px"/>
+            </div>
+            <div className="col-9">
+              <h4 className="card-title">{ans ? ans.title : ""}</h4>
+              <h6 className="card-subtitle mb-2 text-muted">{ans
+                  ? ans.album.title
+                  : ""}</h6>
+              {/*<img src={ans ? ans.artist.picture : ""}/>*/}
+            </div>
+          </div>
           <textarea className="form-control wd-whats-happening"
                     onChange={(e) =>
                         setNewTuit({

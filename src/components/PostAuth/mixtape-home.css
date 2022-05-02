@@ -167,6 +167,10 @@ i.wd-search-mag {
     text-decoration: none;
 }
 
+.img-rounded-corners {
+    border-radius: 15px;
+}
+
 .mt-note-font {
     font-size:15px
 }

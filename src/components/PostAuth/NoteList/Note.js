@@ -51,7 +51,7 @@ const Note = ({
         <div className="card-header">
           <span className='mt-note-font'> {note.username} commented on</span>
         </div>
-        <a href={`mix/details/${note.songId}`} className="mt-no-underline">
+        <a href={`/mix/details/${note.songId}`} className="mt-no-underline">
         <div className="card-header">
           <div className="row">
             <div className="col-2">
