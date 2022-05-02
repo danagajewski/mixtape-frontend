@@ -26,8 +26,8 @@ const Profile = () => {
 
   return (
       <div className="row mt-5">
-        <div className="col-2 col-lg-3 col-xl-4"/>
-        <div className="col-8 col-lg-6 col-xl-4">
+        <div className="col-1 col-lg-2 col-xl-3"/>
+        <div className="col-10 col-lg-8 col-xl-6">
 
           <div className="container text-center">
 
@@ -49,6 +49,7 @@ const Profile = () => {
             </button>
           </div>
         </div>
+        <div className="col-1 col-lg-2 col-xl-3"/>
       </div>
   )
 }
