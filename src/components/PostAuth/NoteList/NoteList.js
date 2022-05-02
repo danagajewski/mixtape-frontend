@@ -5,6 +5,7 @@ import {useDispatch, useSelector}
   from "react-redux";
 import {findAllNotes} from "../../actions/notes-actions";
 import {findAllFollowers} from "../../actions/followers-actions";
+import '../mixtape-home.css'
 
 const NoteList = ({profile}) => {
 
@@ -22,7 +23,7 @@ const NoteList = ({profile}) => {
   }
 
   return (
-      <ul className="list-group">
+      <ul className="list-group mt-no-background">
         {
             notes.map && notes.map(note =>
                 <Note key={note._id}

@@ -46,9 +46,9 @@ const Note = ({
   }, [])
 
   return (
-      <div className="card wd-middle mt-1">
+      <div className="card wd-middle mt-1 bg-secondary">
 
-        <div className="card-header">
+        <div className="card-header bg-secondary">
           <span className='mt-note-font'> {note.username} commented on</span>
         </div>
         <a href={`/mix/details/${note.songId}`} className="mt-no-underline">
@@ -78,7 +78,7 @@ const Note = ({
               <p className="wd-content-main">{note.username} {note.verified
                   ? <i className="fa-solid fa-check-circle"/> : ""} <span
                   className="wd-handle">@{note.handle}</span> <span
-                  className="wd-handle"> - {note.time}
+                  className="wd-handle"> {note.time.substring(0, 10)}
 
                 {profile!==undefined && profile._id===note.user?<i className="fas fa-remove float-end"
                    onClick={() => deleteNote(dispatch, note)}/>:<></>}

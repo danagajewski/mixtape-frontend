@@ -11,7 +11,6 @@ const MyProfileStats = ({ProfileId}) => {
 
   const followers = follows.filter(follow => follow.followed === ProfileId).length;
   const followeds = follows.filter(follow => follow.follower === ProfileId).length;
-  console.log(follows)
 
   return (
       <div className="d-flex justify-content-center mt-2">

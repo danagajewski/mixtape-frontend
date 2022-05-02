@@ -16,7 +16,7 @@ const ProfileNotes = ({profileId}) => {
   return (
       <div className='container mt-3 text-center'>
         <h5 className='text-center'>Your Notes</h5>
-        <ul className="list-group mt-3">
+        <ul className="list-group mt-3 mt-no-background">
           {
               notes.map && notes.map(note =>
                   <Note key={note._id}

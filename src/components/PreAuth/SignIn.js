@@ -34,7 +34,7 @@ const SignIn = () => {
           <div className="form-group mt-1">
             <label className="mx-2" htmlFor="password">Password</label>
             <input type="password" className="form-control"
-                   id="password" ref={passwordRef} placeholder="poopybutthole"/>
+                   id="password" ref={passwordRef} placeholder="thecoolest"/>
           </div>
           <div className="container mt-3 d-flex justify-content-center">
             <button type="button" className="btn btn-secondary" onClick={handleSigninBtn}>Let's Rock!</button>

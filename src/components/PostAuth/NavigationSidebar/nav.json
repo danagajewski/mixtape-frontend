@@ -1,5 +1,5 @@
 [
-  {"icon": "fa-solid fa-record-vinyl", "content": "", "active":false, "link": "/mix"},
+  {"icon": "fa-solid fa-record-vinyl", "content": "Home", "active":false, "link": "/mix"},
   {"icon": "fa-brands fa-searchengin", "content": "Search", "active":false, "link": "/mix/search"},
   {"icon": "fa-solid fa-user", "content": "Profile", "active":false, "link": "/profile"},
   {"icon": "fa-solid fa-user-plus", "content": "Find Friends", "active":false, "link": "/mix/profilefinder"}]

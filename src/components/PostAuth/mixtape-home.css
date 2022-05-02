@@ -135,6 +135,8 @@ span.wd-stack-sizing {
 
 .wd-middle {
     border-bottom-color: rgb(80, 80, 80);
+    border-top-color: transparent;
+    color: red;
 }
 
 .wd-top {
@@ -144,7 +146,7 @@ span.wd-stack-sizing {
 
 .wd-handle{
     font-weight: normal;
-    color: rgb(110, 118, 125);
+    color: rgb(80, 80, 80);
 }
 
 i.wd-search-mag {
@@ -181,4 +183,10 @@ img.mt-album{
 
 .mt-top-chart{
     list-style-type: none;
+}
+
+.mt-no-background {
+
+    background-image: none;
+
 }
