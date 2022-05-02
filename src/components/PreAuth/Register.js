@@ -50,12 +50,12 @@ const Register = () => {
           {takenUsername === false ?
               <div className="form-group mt-1">
                 <label className="mx-2" htmlFor="username">Username</label>
-                <input type="text" className="form-control"
+                <input type="text" className="form-control" placeholder='iamcool2022'
                        id="username" ref={usernameRef}/>
               </div> :
               <div className="form-group has-danger mt-1">
                 <label className="mx-2" htmlFor="username">Username</label>
-                <input type="text" className="form-control is-invalid"
+                <input type="text" className="form-control is-invalid" placeholder='iamcool2022'
                        id="username" ref={usernameRef}/>
                 <div className="invalid-feedback">Username is taken
                 </div>
@@ -69,21 +69,21 @@ const Register = () => {
           <div className="form-group mt-1">
             <label className="mx-2" htmlFor="password">Password</label>
             <input type="password" className="form-control"
-                   id="password" ref={passwordRef} onChange={event => setPassword(event.target.value)} placeholder="poopybutthole"/>
+                   id="password" ref={passwordRef} onChange={event => setPassword(event.target.value)} placeholder="TheCoolest"/>
           </div>
           {password === passwordC ?
               <div className="form-group mt-1">
                 <label className="mx-2" htmlFor="passwordC">Confirm New
                   Password</label>
                 <input type="password" className="form-control"
-                       id="passwordC" ref={passwordCRef}
+                       id="passwordC" ref={passwordCRef} placeholder="TheCoolest"
                        onChange={event => setPasswordC(event.target.value)}/>
               </div> :
               <div className="form-group has-danger mt-1">
                 <label className="mx-2" htmlFor="passwordC">Confirm New
                   Password</label>
                 <input type="password" className="form-control is-invalid"
-                       id="passwordC" ref={passwordCRef}
+                       id="passwordC" ref={passwordCRef} placeholder="TheCoolest"
                        onChange={event => setPasswordC(event.target.value)}/>
                 <div className="invalid-feedback">Must match first password.
                 </div>
