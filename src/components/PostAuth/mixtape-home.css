@@ -167,3 +167,14 @@ i.wd-search-mag {
     text-decoration: none;
 }
 
+.mt-note-font {
+    font-size:15px
+}
+
+img.mt-album{
+    border-radius: 10px;
+}
+
+.mt-top-chart{
+    list-style-type: none;
+}

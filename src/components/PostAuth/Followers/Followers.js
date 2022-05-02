@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {findAllFollowers} from "../../actions/followers-actions";
+import {findFollowers} from "../../actions/followers-actions";
 import FollowList from "./FollowList";
 import {useParams} from "react-router";
 import {useNavigate} from "react-router-dom";
@@ -11,9 +11,9 @@ const Followers = () => {
   const follows = useSelector(
       state => state.followers);
   const dispatch = useDispatch();
-  useEffect(() => {findAllFollowers(dispatch, userId.pid)}, []);
+  useEffect(() => {findFollowers(dispatch, userId.pid)}, []);
 
-  const followeds = follows.filter(follow => follow.followed === userId.pid);
+  const followeds = follows.filter(follow => follow.follower === userId.pid);
   const length = followeds.length;
 
   const navigate = useNavigate();

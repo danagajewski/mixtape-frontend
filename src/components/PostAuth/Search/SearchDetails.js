@@ -5,6 +5,7 @@ import {useParams} from "react-router";
 import {useDispatch} from "react-redux";
 import {createNote} from "../../actions/notes-actions";
 import {useProfile} from "../../Contexts/profile-context";
+import SongNotes from "./SongNotes";
 // import {useNavigate} from "react-router-dom";
 
 const SearchDetails = () => {
@@ -33,10 +34,6 @@ const SearchDetails = () => {
       getAnswer()
     }
   }, [])
-  console.log(profile)
-  // console.log(searchDetailString)
-  console.log(songId.current)
-  console.log(newTuit)
   return (
       // <h1>Success</h1>
       <div className="card border-primary mb-3" >
@@ -60,6 +57,7 @@ const SearchDetails = () => {
             <i className="fa-solid fa-paper-plane"/>
           </button>
         </div>
+        <SongNotes songId={songId}/>
       </div>
   )
 }

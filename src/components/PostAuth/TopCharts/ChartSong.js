@@ -2,7 +2,6 @@ import React from "react";
 import {useNavigate} from "react-router-dom";
 
 const ChartSong = (data) => {
-  console.log(data)
   const navigate = useNavigate()
   return(
       // <li className="list-group-item justify-content-between align-items-center">

@@ -6,12 +6,11 @@ import {useProfile} from "../../Contexts/profile-context";
 
 const HomeScreen = () => {
   const {profile} = useProfile()
-  console.log(profile)
 
   return(
       <div>
         {/*{profile?<WhatsHappening profile={profile}/>:<></>}*/}
-        <NoteList/>
+        <NoteList profile={profile}/>
       </div>
   )
 }

@@ -4,14 +4,22 @@ import React, {useEffect} from "react";
 import {useDispatch, useSelector}
   from "react-redux";
 import {findAllNotes} from "../../actions/notes-actions";
+import {findAllFollowers} from "../../actions/followers-actions";
 
-const NoteList = () => {
-  const notes = useSelector(
+const NoteList = ({profile}) => {
+
+  let notes = useSelector(
       state => state.notes);
+  useEffect(() => {findAllNotes(dispatch)}, []);
+  const follows = useSelector(
+      state => state.followers);
   const dispatch = useDispatch();
-  useEffect(() => {
-    findAllNotes(dispatch)
-  }, []);
+  useEffect(() => {findAllFollowers(dispatch)}, []);
+  if (profile!==undefined) {
+    let followed = follows.filter(follow => follow.follower === profile._id);
+    followed = followed.map(follow => follow.followed)
+    notes = notes.filter(note => followed.includes(note.user) || note.user === profile._id)
+  }
 
   return (
       <ul className="list-group">

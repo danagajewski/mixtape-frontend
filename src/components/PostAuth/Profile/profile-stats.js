@@ -1,12 +1,12 @@
 import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {findAllFollowers} from "../../actions/followers-actions";
+import {findFollowers} from "../../actions/followers-actions";
 
 const MyProfileStats = ({ProfileId}) => {
   const follows = useSelector(
       state => state.followers);
   const dispatch = useDispatch();
-  useEffect(() => {findAllFollowers(dispatch, ProfileId)}, []);
+  useEffect(() => {findFollowers(dispatch, ProfileId)}, []);
 
 
   const followers = follows.filter(follow => follow.followed === ProfileId).length;

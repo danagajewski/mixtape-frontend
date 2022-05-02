@@ -17,9 +17,8 @@ const ProfileCard = (data) => {
                      width="60px"
                      style={{borderRadius: "100px"}}/>
               </div>
-              <div className="col-8">
-                <h6>{data.data.username} {data.data.verified ? <i
-                    className="fa-brands fa-itunes-note"/> : ''}</h6>
+              <div className="col-8 mt-2">
+                <h6>{data.data.username} {data.data.verified ? <i className="fa-solid fa-check-circle"/> : ""}</h6>
               </div>
             </div>
           {/*</li>*/}
