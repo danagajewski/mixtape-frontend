@@ -12,7 +12,7 @@ const SongNotes = ({songId}) => {
   let notes = useSelector(
       state => state.notes);
   useEffect(() => {findAllNotes(dispatch)}, []);
-  notes = notes.filter(note => note.songId = songId);
+  notes = notes.filter(note => note.songId === songId.current);
 
   return (
       <ul className="list-group">
